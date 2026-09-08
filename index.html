@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="个人作品集、经历介绍与个人作品 | Personal portfolio and experience">
   <meta name="theme-color" content="#111315">
-  <title>你的名字 | Your Name</title>
+  <title>张伟峰 | Zhang Weifeng</title>
   <style>
     :root {
       --ink: #121412;
@@ -344,7 +344,7 @@
   <!-- [EDIT] Replace the name and navigation labels here. -->
   <header class="site-header">
     <nav class="nav shell" aria-label="主导航 / Main navigation">
-      <a class="brand" href="#top"><span class="zh-only">你的名字</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Your Name</span><span class="dot">.</span></a>
+      <a class="brand" href="#top"><span class="zh-only">张伟峰</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Zhang Weifeng</span><span class="dot">.</span></a>
       <div class="nav-actions">
         <div class="nav-links">
           <a href="#about"><span class="zh-only">关于</span><span class="sep-bi"> / </span><span class="en-only" lang="en">About</span></a>
@@ -369,7 +369,7 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-inner shell">
         <p class="eyebrow"><span class="zh-only">你的角色 / 你的专业方向</span><span class="sep-bi"> · </span><span class="en-only" lang="en">Your role / specialty</span></p>
-        <h1 id="hero-title"><span class="zh-only">你的名字</span><span class="hero-en-name en-only" lang="en">Your Name</span></h1>
+        <h1 id="hero-title"><span class="zh-only">张伟峰</span><span class="hero-en-name en-only" lang="en">Zhang Weifeng</span></h1>
         <p class="hero-copy"><span class="zh-only">一句清晰、有个性的自我介绍。用两行说明你在做什么，以及你希望创造怎样的价值。</span><span class="en-copy en-only" lang="en">A concise, distinctive introduction. In two lines, say what you do and the value you hope to create.</span></p>
         <div class="actions">
           <a class="button button-primary" href="#work"><span class="zh-only">查看作品</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Work</span> <i data-lucide="arrow-down-right"></i></a>
@@ -492,7 +492,7 @@
   <!-- [EDIT] Footer links. -->
   <footer>
     <div class="footer-inner shell">
-      <span>© <span id="year"></span> <span class="zh-only">你的名字</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Your Name</span></span>
+      <span>© <span id="year"></span> <span class="zh-only">张伟峰</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Zhang Weifeng</span></span>
       <div class="footer-links">
         <a href="https://github.com/Kedaya66" target="_blank" rel="noreferrer" aria-label="GitHub">GitHub</a>
         <a href="mailto:you@example.com">Email</a>
@@ -512,7 +512,7 @@
       const nextMode = validLanguages.includes(mode) ? mode : "bi";
       document.body.dataset.lang = nextMode;
       document.documentElement.lang = nextMode === "en" ? "en" : "zh-CN";
-      document.title = nextMode === "en" ? "Your Name | Personal Portfolio" : nextMode === "zh" ? "你的名字 | 个人网站" : "你的名字 | Your Name";
+      document.title = nextMode === "en" ? "Zhang Weifeng | Personal Portfolio" : nextMode === "zh" ? "张伟峰 | 个人网站" : "张伟峰 | Zhang Weifeng";
       languageButtons.forEach(function (button) {
         button.setAttribute("aria-pressed", String(button.dataset.langValue === nextMode));
       });
