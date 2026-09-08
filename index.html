@@ -290,7 +290,7 @@
       .contact h2 { font-size: 46px; }
     }
 
-    @media (max-width: 820px) {
+    @media (max-width: 860px) {
       :root { --header-h: 62px; }
       .shell { width: min(calc(100% - 32px), var(--max)); }
       .menu-button { display: inline-flex; }
@@ -353,6 +353,7 @@
           <a href="#about"><span class="zh-only">关于</span><span class="sep-bi"> / </span><span class="en-only" lang="en">About</span></a>
           <a href="#education"><span class="zh-only">教育</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Education</span></a>
           <a href="#experience"><span class="zh-only">经历</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Experience</span></a>
+          <a href="#projects"><span class="zh-only">项目</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Projects</span></a>
           <a href="#work"><span class="zh-only">成果</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Work</span></a>
           <a href="#contact"><span class="zh-only">联系</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Contact</span></a>
         </div>
@@ -376,7 +377,7 @@
         <h1 id="hero-title"><span class="zh-only">张伟峰</span><span class="hero-en-name en-only" lang="en">Zhang Weifeng</span></h1>
         <p class="hero-copy"><span class="zh-only">我的研究与工程路径从汕头大学的视觉与医学影像出发，经由明源云的多模态与检索应用，延伸至九安医疗的强化学习、训练推理系统和 AI-native 应用。</span><span class="en-copy en-only" lang="en">My path spans visual and medical imaging research at Shantou University, multimodal and retrieval applications at Ming Yuan Cloud, and reinforcement learning, training/inference systems and AI-native applications at iHealth.</span></p>
         <div class="actions">
-          <a class="button button-primary" href="#work"><span class="zh-only">查看作品</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Work</span> <i data-lucide="arrow-down-right"></i></a>
+          <a class="button button-primary" href="#projects"><span class="zh-only">查看项目</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Projects</span> <i data-lucide="arrow-down-right"></i></a>
           <a class="button button-secondary" href="https://github.com/Kedaya66" target="_blank" rel="noreferrer">GitHub <i data-lucide="github"></i></a>
         </div>
       </div>
@@ -465,11 +466,41 @@
       </div>
     </section>
 
-    <!-- Selected research and publications from CV. -->
-    <section class="section" id="work">
+    <!-- Public GitHub repositories. -->
+    <section class="section" id="projects">
       <div class="shell">
         <div class="section-head">
-          <div class="section-label">04 / <span class="zh-only">代表成果</span><span class="sep-bi"> · </span><span class="en-only" lang="en">Selected Work</span></div>
+          <div class="section-label">04 / <span class="zh-only">GitHub 项目</span><span class="sep-bi"> · </span><span class="en-only" lang="en">GitHub Projects</span></div>
+          <h2 class="section-title"><span class="zh-only">将研究与系统工作沉淀为可复用、可验证的开源实践。</span><span class="en-title en-only" lang="en">Turning research and systems work into reusable, verifiable open-source practice.</span></h2>
+        </div>
+        <div class="projects">
+          <article class="project project-text">
+            <div class="project-body">
+              <div class="project-meta"><span><span class="zh-only">开源 · 大模型系统</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Open Source · LLM Systems</span></span><span>2026</span></div>
+              <h3>DeepSpec-OPD</h3>
+              <p><span class="zh-only">基于 DeepSeek DeepSpec 扩展面向投机解码草稿模型的在线训练与同策略蒸馏，支持 DeepSeek-V4-Flash、SGLang 在线特征流、并发 rollout 预取与 FSDP2 训练。</span><span class="en-copy en-only" lang="en">An extension of DeepSeek DeepSpec for online training and on-policy distillation of speculative-decoding draft models, with DeepSeek-V4-Flash, SGLang feature streaming, concurrent rollout prefetching and FSDP2 training.</span></p>
+              <a class="project-link" href="https://github.com/Kedaya66/deepspec-opd" target="_blank" rel="noreferrer"><span class="zh-only">查看仓库</span><span class="sep-bi"> / </span><span class="en-only" lang="en">View Repository</span> <i data-lucide="arrow-up-right"></i></a>
+              <div class="project-status">Python · SGLang · FSDP2 · Speculative Decoding</div>
+            </div>
+          </article>
+          <article class="project project-text">
+            <div class="project-body">
+              <div class="project-meta"><span><span class="zh-only">技术实践</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Technical Practice</span></span><span>2026</span></div>
+              <h3>llm-deploy</h3>
+              <p><span class="zh-only">用于整理大模型推理服务部署实践的公开仓库，聚焦服务化与部署经验；当前处于内容建设阶段。</span><span class="en-copy en-only" lang="en">A public repository for documenting practical LLM inference serving and deployment work; currently under active development.</span></p>
+              <a class="project-link" href="https://github.com/Kedaya66/llm-deploy" target="_blank" rel="noreferrer"><span class="zh-only">查看仓库</span><span class="sep-bi"> / </span><span class="en-only" lang="en">View Repository</span> <i data-lucide="arrow-up-right"></i></a>
+              <div class="project-status"><span class="zh-only">持续建设中</span><span class="sep-bi"> / </span><span class="en-only" lang="en">In Progress</span> · LLM Deployment</div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Selected research and publications from CV. -->
+    <section class="section section-white" id="work">
+      <div class="shell">
+        <div class="section-head">
+          <div class="section-label">05 / <span class="zh-only">代表成果</span><span class="sep-bi"> · </span><span class="en-only" lang="en">Selected Work</span></div>
           <h2 class="section-title"><span class="zh-only">以可验证的研究结果，连接算法、系统与真实问题。</span><span class="en-title en-only" lang="en">Connecting algorithms, systems and real problems through verifiable research outcomes.</span></h2>
         </div>
         <div class="projects">
