@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="张伟峰的个人网站，关注计算机视觉、医学影像、多模态与大模型系统 | Zhang Weifeng's portfolio in computer vision, medical imaging, multimodal AI and LLM systems">
+  <meta name="description" content="张伟峰的个人网站：计算机视觉、医学影像、多模态、大模型训练推理与 AI 工程 | Zhang Weifeng - AI research and engineering">
   <meta name="theme-color" content="#111315">
   <title>张伟峰 | Zhang Weifeng</title>
   <style>
@@ -249,6 +249,9 @@
     .project-media img { width: 100%; height: 100%; object-fit: cover; transition: transform 220ms ease; }
     .project:hover .project-media img { transform: scale(1.025); }
     .project-body { padding: 24px; }
+    .project-text { display: flex; border-top: 4px solid var(--coral); }
+    .project-text .project-body { width: 100%; display: flex; flex-direction: column; }
+    .project-status { margin-top: auto; padding-top: 16px; border-top: 1px solid var(--line); color: var(--coral); font-size: 12px; font-weight: 800; text-transform: uppercase; }
     .project-meta { display: flex; justify-content: space-between; gap: 16px; margin-bottom: 12px; color: var(--muted); font-size: 12px; font-weight: 800; text-transform: uppercase; }
     .project h3 { margin-bottom: 10px; font-family: Georgia, "Times New Roman", serif; font-size: 26px; font-weight: 500; line-height: 1.25; }
     .project p { margin-bottom: 18px; color: #525960; }
@@ -287,7 +290,7 @@
       .contact h2 { font-size: 46px; }
     }
 
-    @media (max-width: 720px) {
+    @media (max-width: 820px) {
       :root { --header-h: 62px; }
       .shell { width: min(calc(100% - 32px), var(--max)); }
       .menu-button { display: inline-flex; }
@@ -348,8 +351,9 @@
       <div class="nav-actions">
         <div class="nav-links">
           <a href="#about"><span class="zh-only">关于</span><span class="sep-bi"> / </span><span class="en-only" lang="en">About</span></a>
+          <a href="#education"><span class="zh-only">教育</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Education</span></a>
           <a href="#experience"><span class="zh-only">经历</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Experience</span></a>
-          <a href="#work"><span class="zh-only">项目</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Work</span></a>
+          <a href="#work"><span class="zh-only">成果</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Work</span></a>
           <a href="#contact"><span class="zh-only">联系</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Contact</span></a>
         </div>
         <div class="lang-switch" role="group" aria-label="语言显示 / Language display">
@@ -399,42 +403,61 @@
             <p><span class="zh-only">在汕头大学工学院，我从计算机视觉和医学影像出发，围绕半监督学习、图像分割、数据效率、表征学习与模型泛化开展研究。</span><span class="en-copy en-only" lang="en">At the College of Engineering, Shantou University, I worked on computer vision and medical imaging, including semi-supervised learning, image segmentation, data-efficient learning, representation learning and model generalization.</span></p>
             <p><span class="zh-only">进入产业后，研究与工程实践依次延伸至多模态理解、语义检索与 RAG、强化学习、训练推理系统、投机解码、Agent 微调及 AI-native 应用。</span><span class="en-copy en-only" lang="en">In industry, my work expanded into multimodal understanding, semantic retrieval and RAG, reinforcement learning, training and inference systems, speculative decoding, agent fine-tuning and AI-native applications.</span></p>
           </div>
-          <div class="skill-list" aria-label="研究路径 / Research path">
-            <span class="skill">01 · <span class="zh-only">计算机视觉</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Computer Vision</span></span>
-            <span class="skill">02 · <span class="zh-only">医学影像</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Medical Imaging</span></span>
-            <span class="skill">03 · <span class="zh-only">半监督与分割</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Semi-supervised Segmentation</span></span>
-            <span class="skill">04 · <span class="zh-only">数据效率</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Data-efficient Learning</span></span>
-            <span class="skill">05 · <span class="zh-only">多模态与检索</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Multimodal &amp; Retrieval</span></span>
-            <span class="skill">06 · <span class="zh-only">强化学习</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Reinforcement Learning</span></span>
-            <span class="skill">07 · <span class="zh-only">训练推理系统</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Training &amp; Inference Systems</span></span>
-            <span class="skill">08 · <span class="zh-only">投机解码</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Speculative Decoding</span></span>
-            <span class="skill">09 · <span class="zh-only">Agent 微调</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Agent Fine-tuning</span></span>
-            <span class="skill">10 · <span class="zh-only">AI-native 应用</span><span class="sep-bi"> / </span><span class="en-only" lang="en">AI-native Apps</span></span>
+          <div class="skill-list" aria-label="技术栈 / Technical stack">
+            <span class="skill">Python</span>
+            <span class="skill">PyTorch</span>
+            <span class="skill">Transformer · ViT · UNet</span>
+            <span class="skill">CLIP · LLaVA</span>
+            <span class="skill">DeepSpeed · Megatron</span>
+            <span class="skill">vLLM · SGLang</span>
+            <span class="skill">SFT · DPO · GRPO</span>
+            <span class="skill">LoRA</span>
+            <span class="skill">Diffusion · Rectified Flow</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- [EDIT] Duplicate or remove role-row blocks as needed. -->
-    <section class="section" id="experience">
+    <section class="section" id="education">
       <div class="shell">
         <div class="section-head">
-          <div class="section-label">02 / <span class="zh-only">经历</span><span class="sep-bi"> · </span><span class="en-only" lang="en">Experience</span></div>
+          <div class="section-label">02 / <span class="zh-only">教育</span><span class="sep-bi"> · </span><span class="en-only" lang="en">Education</span></div>
+          <h2 class="section-title"><span class="zh-only">从电子信息工程到信息与通信工程，建立扎实的视觉与机器学习基础。</span><span class="en-title en-only" lang="en">A foundation in electronic information, communication engineering, vision and machine learning.</span></h2>
+        </div>
+        <div class="timeline">
+          <article class="role-row">
+            <div class="role-time">2022.09 - 2025.06</div>
+            <div class="role-place"><strong><span class="zh-only">汕头大学</span><span class="sep-bi"> · </span><span class="en-only" lang="en">Shantou University</span></strong><span><span class="zh-only">学术型硕士 · 信息与通信工程</span><span class="sep-bi"> · </span><span class="en-only" lang="en">M.Eng. · Information &amp; Communication Engineering</span></span></div>
+            <p class="role-copy"><span class="zh-only">课程与研究基础涵盖现代神经网络、机器学习、图像处理、矩阵理论和模式识别。</span><span class="en-copy en-only" lang="en">Coursework and research foundations in modern neural networks, machine learning, image processing, matrix theory and pattern recognition.</span></p>
+          </article>
+          <article class="role-row">
+            <div class="role-time">2017.09 - 2021.06</div>
+            <div class="role-place"><strong><span class="zh-only">西安邮电大学</span><span class="sep-bi"> · </span><span class="en-only" lang="en">Xi'an University of Posts &amp; Telecommunications</span></strong><span><span class="zh-only">工学学士 · 电子信息工程</span><span class="sep-bi"> · </span><span class="en-only" lang="en">B.Eng. · Electronic Information Engineering</span></span></div>
+            <p class="role-copy"><span class="zh-only">系统学习数字图像处理、数字信号处理、信号与系统等核心课程。</span><span class="en-copy en-only" lang="en">Core training in digital image processing, digital signal processing, signals and systems.</span></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-white" id="experience">
+      <div class="shell">
+        <div class="section-head">
+          <div class="section-label">03 / <span class="zh-only">经历</span><span class="sep-bi"> · </span><span class="en-only" lang="en">Experience</span></div>
           <h2 class="section-title"><span class="zh-only">在学术研究、产业应用与大模型系统之间，建立连续的能力路径。</span><span class="en-title en-only" lang="en">A continuous path across academic research, industry applications and LLM systems.</span></h2>
         </div>
         <div class="timeline">
           <article class="role-row">
-            <div class="role-time"><span class="zh-only">01 · 学术阶段</span><span class="sep-bi"> / </span><span class="en-only" lang="en">01 · Academic</span></div>
+            <div class="role-time">2022.09 - 2025.06</div>
             <div class="role-place"><strong><span class="zh-only">汕头大学工学院</span><span class="sep-bi"> · </span><span class="en-only" lang="en">College of Engineering, Shantou University</span></strong><span><span class="zh-only">计算机视觉与医学影像研究</span><span class="sep-bi"> · </span><span class="en-only" lang="en">Computer Vision &amp; Medical Imaging</span></span></div>
-            <p class="role-copy"><span class="zh-only">围绕半监督学习、图像分割与数据效率开展研究，并延伸至表征学习、模型泛化和医学影像分析。</span><span class="en-copy en-only" lang="en">Research on semi-supervised learning, image segmentation and data efficiency, extending to representation learning, model generalization and medical image analysis.</span></p>
+            <p class="role-copy"><span class="zh-only">主导不完整、不完全与带噪监督下的高效学习研究，完成数据处理、算法设计、训练评测与论文写作；同时参与骶髂关节自动分级和单图像去模糊项目。</span><span class="en-copy en-only" lang="en">Led research on data-efficient learning under incomplete, partial and noisy supervision, covering data processing, algorithm design, training, evaluation and paper writing; also contributed to automated sacroiliitis grading and single-image deblurring.</span></p>
           </article>
           <article class="role-row">
-            <div class="role-time"><span class="zh-only">02 · 产业实践</span><span class="sep-bi"> / </span><span class="en-only" lang="en">02 · Industry</span></div>
-            <div class="role-place"><strong><span class="zh-only">明源云</span><span class="sep-bi"> · </span><span class="en-only" lang="en">Ming Yuan Cloud</span></strong><span><span class="zh-only">SaaS AI 工程</span><span class="sep-bi"> · </span><span class="en-only" lang="en">SaaS AI Engineering</span></span></div>
-            <p class="role-copy"><span class="zh-only">面向 SaaS 业务场景开展 AI 开发，涉及多模态理解、语义检索、RAG、知识组织与应用工程化。</span><span class="en-copy en-only" lang="en">AI development for SaaS use cases, spanning multimodal understanding, semantic retrieval, RAG, knowledge organization and application engineering.</span></p>
+            <div class="role-time">2024.10 - 2025.01</div>
+            <div class="role-place"><strong><span class="zh-only">明源云 · 人工智能事业部</span><span class="sep-bi"> · </span><span class="en-only" lang="en">Ming Yuan Cloud · AI Division</span></strong><span><span class="zh-only">算法实习生</span><span class="sep-bi"> · </span><span class="en-only" lang="en">Algorithm Intern</span></span></div>
+            <p class="role-copy"><span class="zh-only">主导产品算法需求的端到端开发，完成视频切片、文本标签提取与评测、标签匹配、图像一致性检测和短文本语义聚类；同时评测开源 LLM 与多模态模型，并实践 DeepSpeed、Megatron、vLLM 与 SGLang。</span><span class="en-copy en-only" lang="en">Led end-to-end product algorithm development across video segmentation, text-tag extraction and evaluation, tag matching, image consistency checks and short-text semantic clustering; evaluated open LLMs and multimodal models while working with DeepSpeed, Megatron, vLLM and SGLang.</span></p>
           </article>
           <article class="role-row">
-            <div class="role-time"><span class="zh-only">03 · 当前</span><span class="sep-bi"> / </span><span class="en-only" lang="en">03 · Present</span></div>
+            <div class="role-time"><span class="zh-only">当前</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Present</span></div>
             <div class="role-place"><strong><span class="zh-only">九安医疗 · 人工智能室</span><span class="sep-bi"> · </span><span class="en-only" lang="en">iHealth · AI Lab</span></strong><span><span class="zh-only">强化学习与训练推理系统</span><span class="sep-bi"> · </span><span class="en-only" lang="en">Reinforcement Learning &amp; Training/Inference Systems</span></span></div>
             <p class="role-copy"><span class="zh-only">围绕 Agent 微调、强化学习链路优化、模型部署与评测、实验分析与性能诊断、AI-native 应用开发，以及投机解码模型训练框架开展工作。</span><span class="en-copy en-only" lang="en">Work spanning agent fine-tuning, reinforcement learning pipeline optimization, model deployment and evaluation, experiment analysis and performance diagnosis, AI-native applications, and a speculative decoding model training framework.</span></p>
           </article>
@@ -442,53 +465,57 @@
       </div>
     </section>
 
-    <!-- [EDIT] Projects: replace image, title, description, tags and URLs. -->
-    <section class="section section-white" id="work">
+    <!-- Selected research and publications from CV. -->
+    <section class="section" id="work">
       <div class="shell">
         <div class="section-head">
-          <div class="section-label">03 / <span class="zh-only">项目</span><span class="sep-bi"> · </span><span class="en-only" lang="en">Selected Work</span></div>
-          <h2 class="section-title"><span class="zh-only">少而精的代表作，比一长串清单更有说服力。</span><span class="en-title en-only" lang="en">A few considered projects say more than a long list.</span></h2>
+          <div class="section-label">04 / <span class="zh-only">代表成果</span><span class="sep-bi"> · </span><span class="en-only" lang="en">Selected Work</span></div>
+          <h2 class="section-title"><span class="zh-only">以可验证的研究结果，连接算法、系统与真实问题。</span><span class="en-title en-only" lang="en">Connecting algorithms, systems and real problems through verifiable research outcomes.</span></h2>
         </div>
         <div class="projects">
-          <article class="project">
-            <div class="project-media"><img src="https://opengraph.githubassets.com/1/Kedaya66/deepspec-opd" alt="项目一预览 / Project one preview" loading="lazy"></div>
+          <article class="project project-text">
             <div class="project-body">
-              <div class="project-meta"><span><span class="zh-only">项目类型</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Type</span></span><span>2026</span></div>
-              <h3><span class="zh-only">项目名称一</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Project One</span></h3>
-              <p><span class="zh-only">用两三句话说明项目解决的问题、你的贡献，以及最终产生的价值。</span><span class="en-copy en-only" lang="en">In two or three sentences, explain the problem, your contribution, and the value created.</span></p>
-              <a class="project-link" href="https://github.com/Kedaya66/deepspec-opd" target="_blank" rel="noreferrer"><span class="zh-only">查看项目</span><span class="sep-bi"> / </span><span class="en-only" lang="en">View project</span> <i data-lucide="arrow-up-right"></i></a>
+              <div class="project-meta"><span><span class="zh-only">半监督医学分割</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Semi-supervised Medical Segmentation</span></span><span>2023 - 2024</span></div>
+              <h3>W2S+: Adapting Weak-to-Strong Consistency</h3>
+              <p><span class="zh-only">设计代表性子集选择与双阶段强弱一致性方法，在多个公开医学分割数据集上降低标注成本并提升半监督分割表现。</span><span class="en-copy en-only" lang="en">Designed representative-subset selection and two-stage weak-to-strong consistency methods to reduce annotation cost and improve semi-supervised segmentation across public medical datasets.</span></p>
+              <div class="project-status"><span class="zh-only">AAAI 2025 投稿 · 第一作者</span><span class="sep-bi"> / </span><span class="en-only" lang="en">AAAI 2025 Submission · First Author</span></div>
             </div>
           </article>
-          <article class="project">
-            <div class="project-media"><img src="https://opengraph.githubassets.com/1/Kedaya66/llm-deploy" alt="项目二预览 / Project two preview" loading="lazy"></div>
+          <article class="project project-text">
             <div class="project-body">
-              <div class="project-meta"><span><span class="zh-only">项目类型</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Type</span></span><span>2025</span></div>
-              <h3><span class="zh-only">项目名称二</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Project Two</span></h3>
-              <p><span class="zh-only">说明你如何思考和推进这个项目。把技术细节与用户或业务价值连接起来。</span><span class="en-copy en-only" lang="en">Show how you shaped the work, connecting technical choices with user or business value.</span></p>
-              <a class="project-link" href="https://github.com/Kedaya66/llm-deploy" target="_blank" rel="noreferrer"><span class="zh-only">查看项目</span><span class="sep-bi"> / </span><span class="en-only" lang="en">View project</span> <i data-lucide="arrow-up-right"></i></a>
+              <div class="project-meta"><span><span class="zh-only">医学影像</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Medical Imaging</span></span><span>2022 - 2024</span></div>
+              <h3><span class="zh-only">骶髂关节炎自动分级诊断</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Automated Sacroiliitis Grading</span></h3>
+              <p><span class="zh-only">结合 MRI、CT、影像组学与深度学习，参与构建多模态数据集和自动分级系统，辅助影像科医生进行诊断。</span><span class="en-copy en-only" lang="en">Combined MRI, CT, radiomics and deep learning to build multimodal datasets and automated grading systems for radiology-assisted diagnosis.</span></p>
+              <div class="project-status">Physics in Medicine &amp; Biology 2024 · CCBR 2022</div>
             </div>
           </article>
-          <article class="project">
-            <div class="project-media"><img src="https://opengraph.githubassets.com/1/Kedaya66/Kedaya66.github.io" alt="项目三预览 / Project three preview" loading="lazy"></div>
+          <article class="project project-text">
             <div class="project-body">
-              <div class="project-meta"><span><span class="zh-only">个人项目</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Personal</span></span><span>2026</span></div>
-              <h3><span class="zh-only">项目名称三</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Project Three</span></h3>
-              <p><span class="zh-only">补充一个能展示不同能力面的项目，或者换成文章、演讲、开源贡献。</span><span class="en-copy en-only" lang="en">Add a project that reveals another dimension of your work, or feature writing, talks, or open-source contributions.</span></p>
-              <a class="project-link" href="https://github.com/Kedaya66" target="_blank" rel="noreferrer"><span class="zh-only">查看项目</span><span class="sep-bi"> / </span><span class="en-only" lang="en">View project</span> <i data-lucide="arrow-up-right"></i></a>
+              <div class="project-meta"><span><span class="zh-only">大语言模型</span><span class="sep-bi"> / </span><span class="en-only" lang="en">LLM</span></span><span>2025</span></div>
+              <h3><span class="zh-only">中国传统音乐乐谱生成</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Chinese Traditional Music Score Generation</span></h3>
+              <p><span class="zh-only">构建乐谱格式转换和 OMR 流程，将图片与 PDF 转为可编辑 MusicXML，并面向指令微调准备数据、训练与评测链路。</span><span class="en-copy en-only" lang="en">Built score-format conversion and OMR workflows from images and PDFs to editable MusicXML, together with data, training and evaluation pipelines for instruction tuning.</span></p>
+              <div class="project-status"><span class="zh-only">个人主导</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Project Lead</span></div>
+            </div>
+          </article>
+          <article class="project project-text">
+            <div class="project-body">
+              <div class="project-meta"><span><span class="zh-only">图像复原</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Image Restoration</span></span><span>2023</span></div>
+              <h3>Strip-FFT Transformer for Single Image Deblurring</h3>
+              <p><span class="zh-only">参与 CNN 与 Transformer 混合网络研究，在保持去模糊性能的同时减少模型参数量与显存占用。</span><span class="en-copy en-only" lang="en">Contributed to a hybrid CNN-Transformer network that retained strong deblurring performance while reducing parameter count and memory usage.</span></p>
+              <div class="project-status"><span class="zh-only">ICIG 2023 录用 · 学生第三作者</span><span class="sep-bi"> / </span><span class="en-only" lang="en">ICIG 2023 · Student Third Author</span></div>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- [EDIT] Contact copy and email address. -->
     <section class="contact" id="contact">
       <div class="contact-inner shell">
         <div>
-          <h2><span class="zh-only">有想法值得一起做？聊聊。</span><span class="en-title en-only" lang="en">Have an idea worth building together? Let's talk.</span></h2>
-          <p><span class="zh-only">写下你希望收到的合作类型、工作机会或交流主题。</span><span class="en-copy en-only" lang="en">Share the kinds of collaborations, opportunities, or conversations you welcome.</span></p>
+          <h2><span class="zh-only">欢迎交流研究、系统工程与 AI-native 应用。</span><span class="en-title en-only" lang="en">Open to conversations on research, systems engineering and AI-native applications.</span></h2>
+          <p><span class="zh-only">可通过 GitHub 了解我的公开项目与后续工作。</span><span class="en-copy en-only" lang="en">Visit GitHub for public projects and future work.</span></p>
         </div>
-        <a class="button" href="mailto:you@example.com"><span class="zh-only">发送邮件</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Email</span> <i data-lucide="mail"></i></a>
+        <a class="button" href="https://github.com/Kedaya66" target="_blank" rel="noreferrer"><span class="zh-only">查看 GitHub</span><span class="sep-bi"> / </span><span class="en-only" lang="en">View GitHub</span> <i data-lucide="github"></i></a>
       </div>
     </section>
   </main>
@@ -499,7 +526,6 @@
       <span>© <span id="year"></span> <span class="zh-only">张伟峰</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Zhang Weifeng</span></span>
       <div class="footer-links">
         <a href="https://github.com/Kedaya66" target="_blank" rel="noreferrer" aria-label="GitHub">GitHub</a>
-        <a href="mailto:you@example.com">Email</a>
       </div>
     </div>
   </footer>
