@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="个人作品集与经历介绍">
+  <meta name="theme-color" content="#111315">
+  <title>你的名字 | 个人网站</title>
+  <style>
+    :root {
+      --ink: #121412;
+      --paper: #f3f4f2;
+      --white: #fbfcfb;
+      --muted: #687069;
+      --line: #d9ddda;
+      --coral: #6d786c;
+      --cyan: #aa9873;
+      --acid: #dfe5dd;
+      --header-h: 68px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    :focus-visible { outline: 3px solid var(--cyan); outline-offset: 4px; }
+
+    .shell { width: min(calc(100% - 48px), var(--max)); margin: 0 auto; }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      height: var(--header-h);
+      color: var(--white);
+      background: rgba(18, 20, 18, 0.97);
+      border-bottom: 1px solid rgba(255,255,255,0.14);
+      backdrop-filter: blur(14px);
+    }
+    .nav {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+    }
+    .brand { font-size: 18px; font-weight: 800; }
+    .brand span { color: var(--acid); }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-links a { color: #cfd4d8; font-size: 14px; font-weight: 700; }
+    .nav-links a:hover { color: var(--white); }
+    .menu-button {
+      display: none;
+      width: 42px;
+      height: 42px;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.24);
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 540px;
+      height: min(82svh, 760px);
+      overflow: hidden;
+      color: var(--white);
+      background-color: var(--ink);
+      background-image: url("https://github.com/Kedaya66.png?size=1200");
+      background-repeat: no-repeat;
+      background-position: right center;
+      background-size: min(48vw, 700px) auto;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(18, 20, 18, 0.70);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 1px;
+      background: var(--cyan);
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: 24px;
+      padding-bottom: 48px;
+    }
+    .eyebrow {
+      margin: 0 0 20px;
+      color: var(--acid);
+      font-size: 14px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 {
+      max-width: 790px;
+      margin-bottom: 22px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 82px;
+      font-weight: 500;
+      line-height: 1.02;
+      letter-spacing: 0;
+    }
+    .hero-copy {
+      max-width: 630px;
+      margin-bottom: 32px;
+      color: #e1e5e8;
+      font-size: 20px;
+      line-height: 1.6;
+    }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .button {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 0 18px;
+      font-weight: 800;
+      border: 1px solid var(--white);
+      border-radius: 4px;
+      transition: transform 160ms ease, background 160ms ease, color 160ms ease;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { color: var(--ink); background: var(--acid); border-color: var(--acid); }
+    .button-secondary { color: var(--white); background: rgba(17,19,21,0.62); }
+    .button svg { width: 18px; height: 18px; }
+
+    .signal-band { background: var(--white); border-bottom: 1px solid var(--line); }
+    .signals {
+      min-height: 116px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      align-items: center;
+    }
+    .signal { padding: 24px 28px; border-right: 1px solid var(--line); }
+    .signal:first-child { padding-left: 0; }
+    .signal:last-child { border-right: 0; }
+    .signal strong { display: block; font-family: Georgia, "Times New Roman", serif; font-size: 27px; font-weight: 500; line-height: 1.1; }
+    .signal span { color: var(--muted); font-size: 13px; font-weight: 700; }
+
+    .section { padding: 112px 0; }
+    .section-white { background: var(--white); }
+    .section-head {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 40px;
+      align-items: start;
+      margin-bottom: 54px;
+    }
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+    .section-label::before { content: ""; width: 32px; height: 4px; background: var(--coral); }
+    .section-title { max-width: 760px; margin-bottom: 0; font-family: Georgia, "Times New Roman", serif; font-size: 46px; font-weight: 500; line-height: 1.2; letter-spacing: 0; }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 76px;
+      align-items: start;
+    }
+    .about-copy { color: #2f353a; font-size: 19px; }
+    .about-copy p:last-child { margin-bottom: 0; }
+    .skill-list { display: flex; flex-wrap: wrap; gap: 10px; }
+    .skill {
+      padding: 8px 12px;
+      color: #273039;
+      background: #edf0ed;
+      border: 1px solid #d7dcd8;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 750;
+    }
+
+    .timeline { border-top: 1px solid var(--line); }
+    .role-row {
+      display: grid;
+      grid-template-columns: 210px 260px 1fr;
+      gap: 36px;
+      padding: 30px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .role-time { color: var(--muted); font-size: 14px; font-weight: 800; }
+    .role-place strong { display: block; font-size: 19px; }
+    .role-place span { color: var(--coral); font-weight: 750; }
+    .role-copy { margin-bottom: 0; color: #41484f; }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 28px;
+    }
+    .project {
+      overflow: hidden;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+    .project:hover { transform: translateY(-3px); box-shadow: 0 14px 36px rgba(18,20,18,0.08); }
+    .project-media { aspect-ratio: 16 / 9; overflow: hidden; background: #dfe4e8; }
+    .project-media img { width: 100%; height: 100%; object-fit: cover; transition: transform 220ms ease; }
+    .project:hover .project-media img { transform: scale(1.025); }
+    .project-body { padding: 24px; }
+    .project-meta { display: flex; justify-content: space-between; gap: 16px; margin-bottom: 12px; color: var(--muted); font-size: 12px; font-weight: 800; text-transform: uppercase; }
+    .project h3 { margin-bottom: 10px; font-family: Georgia, "Times New Roman", serif; font-size: 26px; font-weight: 500; line-height: 1.25; }
+    .project p { margin-bottom: 18px; color: #525960; }
+    .project-link { display: inline-flex; align-items: center; gap: 8px; font-weight: 850; }
+    .project-link:hover { color: var(--coral); }
+    .project-link svg { width: 18px; height: 18px; }
+
+    .contact {
+      color: var(--ink);
+      background: #e9eeea;
+      border-top: 1px solid #aeb8ae;
+    }
+    .contact-inner {
+      min-height: 380px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 56px;
+      align-items: center;
+    }
+    .contact h2 { max-width: 800px; margin-bottom: 18px; font-family: Georgia, "Times New Roman", serif; font-size: 52px; font-weight: 500; line-height: 1.12; letter-spacing: 0; }
+    .contact p { max-width: 680px; margin-bottom: 0; font-size: 18px; }
+    .contact .button { border-color: var(--ink); background: var(--ink); color: var(--white); }
+
+    footer { color: #b8c0c6; background: var(--ink); }
+    .footer-inner { min-height: 104px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .footer-links { display: flex; gap: 18px; }
+    .footer-links a:hover { color: var(--acid); }
+
+    @media (max-width: 900px) {
+      h1 { font-size: 64px; }
+      .section-title { font-size: 40px; }
+      .hero { background-size: 70vw auto; background-position: 135% center; }
+      .section-head { grid-template-columns: 1fr; gap: 18px; }
+      .about-grid { grid-template-columns: 1fr; gap: 38px; }
+      .role-row { grid-template-columns: 150px 220px 1fr; gap: 24px; }
+      .contact h2 { font-size: 46px; }
+    }
+
+    @media (max-width: 720px) {
+      :root { --header-h: 62px; }
+      .shell { width: min(calc(100% - 32px), var(--max)); }
+      .menu-button { display: inline-flex; }
+      .nav-links {
+        position: absolute;
+        top: var(--header-h);
+        left: 0;
+        right: 0;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 12px 16px 18px;
+        color: var(--white);
+        background: var(--ink);
+        border-bottom: 1px solid rgba(255,255,255,0.18);
+      }
+      .nav-links.is-open { display: flex; }
+      .nav-links a { padding: 12px 4px; }
+      .hero {
+        min-height: 520px;
+        height: 78svh;
+        max-height: 680px;
+        background-size: 96vw auto;
+        background-position: 145% center;
+      }
+      .hero::before { background: rgba(18, 20, 18, 0.78); }
+      h1 { font-size: 46px; }
+      .hero-copy { font-size: 17px; }
+      .signals { grid-template-columns: 1fr; padding: 12px 0; }
+      .signal { padding: 18px 0; border-right: 0; border-bottom: 1px solid var(--line); }
+      .signal:last-child { border-bottom: 0; }
+      .section { padding: 76px 0; }
+      .section-title { font-size: 34px; }
+      .role-row { grid-template-columns: 1fr; gap: 8px; }
+      .projects { grid-template-columns: 1fr; }
+      .contact-inner { min-height: 430px; grid-template-columns: 1fr; gap: 26px; align-content: center; }
+      .contact h2 { font-size: 38px; }
+      .contact .button { justify-self: start; }
+      .footer-inner { padding: 28px 0; flex-direction: column; align-items: flex-start; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <!-- [EDIT] Replace the name and navigation labels here. -->
+  <header class="site-header">
+    <nav class="nav shell" aria-label="主导航">
+      <a class="brand" href="#top">你的名字<span>.</span></a>
+      <button class="menu-button" type="button" aria-label="打开导航" aria-expanded="false">
+        <i data-lucide="menu"></i>
+      </button>
+      <div class="nav-links">
+        <a href="#about">关于</a>
+        <a href="#experience">经历</a>
+        <a href="#work">项目</a>
+        <a href="#contact">联系</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- [EDIT] Hero: name, role, introduction, avatar and links. -->
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-inner shell">
+        <p class="eyebrow">你的角色 / 你的专业方向</p>
+        <h1 id="hero-title">你的名字</h1>
+        <p class="hero-copy">一句清晰、有个性的自我介绍。用两行说明你在做什么，以及你希望创造怎样的价值。</p>
+        <div class="actions">
+          <a class="button button-primary" href="#work">查看作品 <i data-lucide="arrow-down-right"></i></a>
+          <a class="button button-secondary" href="https://github.com/Kedaya66" target="_blank" rel="noreferrer">GitHub <i data-lucide="github"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- [EDIT] Three quick facts. -->
+    <section class="signal-band" aria-label="个人概览">
+      <div class="signals shell">
+        <div class="signal"><strong>5+ 年</strong><span>相关经验</span></div>
+        <div class="signal"><strong>12 个</strong><span>代表项目</span></div>
+        <div class="signal"><strong>天津 · 中国</strong><span>所在城市</span></div>
+      </div>
+    </section>
+
+    <!-- [EDIT] About text and skill tags. -->
+    <section class="section section-white" id="about">
+      <div class="shell">
+        <div class="section-head">
+          <div class="section-label">01 / 关于</div>
+          <h2 class="section-title">把复杂问题变成清楚、可靠、真正有用的产品。</h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-copy">
+            <p>这里放你的核心介绍：你的专业背景、关注的问题，以及你独特的工作方式。两到三段即可，让访客快速理解你是谁。</p>
+            <p>这里可以补充你的长期兴趣、个人判断或正在探索的方向。比起罗列标签，具体的经历和观点更容易被记住。</p>
+          </div>
+          <div class="skill-list" aria-label="技能">
+            <span class="skill">技能一</span>
+            <span class="skill">技能二</span>
+            <span class="skill">技能三</span>
+            <span class="skill">技能四</span>
+            <span class="skill">技能五</span>
+            <span class="skill">技能六</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- [EDIT] Duplicate or remove role-row blocks as needed. -->
+    <section class="section" id="experience">
+      <div class="shell">
+        <div class="section-head">
+          <div class="section-label">02 / 经历</div>
+          <h2 class="section-title">在实践里持续建立判断、能力与影响力。</h2>
+        </div>
+        <div class="timeline">
+          <article class="role-row">
+            <div class="role-time">2024 - 至今</div>
+            <div class="role-place"><strong>公司 / 机构</strong><span>职位名称</span></div>
+            <p class="role-copy">概括你的职责、解决的问题和代表性成果。尽量加入可验证的影响，例如效率提升、用户增长或交付规模。</p>
+          </article>
+          <article class="role-row">
+            <div class="role-time">2022 - 2024</div>
+            <div class="role-place"><strong>公司 / 机构</strong><span>职位名称</span></div>
+            <p class="role-copy">描述这段经历带来的关键能力与成果，保留最能支持你当前定位的信息。</p>
+          </article>
+          <article class="role-row">
+            <div class="role-time">2018 - 2022</div>
+            <div class="role-place"><strong>学校 / 机构</strong><span>专业或方向</span></div>
+            <p class="role-copy">填写教育经历、研究方向、荣誉或一段对你影响深远的学习经验。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- [EDIT] Projects: replace image, title, description, tags and URLs. -->
+    <section class="section section-white" id="work">
+      <div class="shell">
+        <div class="section-head">
+          <div class="section-label">03 / 项目</div>
+          <h2 class="section-title">少而精的代表作，比一长串清单更有说服力。</h2>
+        </div>
+        <div class="projects">
+          <article class="project">
+            <div class="project-media"><img src="https://opengraph.githubassets.com/1/Kedaya66/deepspec-opd" alt="项目一预览" loading="lazy"></div>
+            <div class="project-body">
+              <div class="project-meta"><span>项目类型</span><span>2026</span></div>
+              <h3>项目名称一</h3>
+              <p>用两三句话说明项目解决的问题、你的贡献，以及最终产生的价值。</p>
+              <a class="project-link" href="https://github.com/Kedaya66/deepspec-opd" target="_blank" rel="noreferrer">查看项目 <i data-lucide="arrow-up-right"></i></a>
+            </div>
+          </article>
+          <article class="project">
+            <div class="project-media"><img src="https://opengraph.githubassets.com/1/Kedaya66/llm-deploy" alt="项目二预览" loading="lazy"></div>
+            <div class="project-body">
+              <div class="project-meta"><span>项目类型</span><span>2025</span></div>
+              <h3>项目名称二</h3>
+              <p>说明你如何思考和推进这个项目。把技术细节与用户或业务价值连接起来。</p>
+              <a class="project-link" href="https://github.com/Kedaya66/llm-deploy" target="_blank" rel="noreferrer">查看项目 <i data-lucide="arrow-up-right"></i></a>
+            </div>
+          </article>
+          <article class="project">
+            <div class="project-media"><img src="https://opengraph.githubassets.com/1/Kedaya66/Kedaya66.github.io" alt="项目三预览" loading="lazy"></div>
+            <div class="project-body">
+              <div class="project-meta"><span>个人项目</span><span>2026</span></div>
+              <h3>项目名称三</h3>
+              <p>补充一个能展示不同能力面的项目，或者换成文章、演讲、开源贡献。</p>
+              <a class="project-link" href="https://github.com/Kedaya66" target="_blank" rel="noreferrer">查看项目 <i data-lucide="arrow-up-right"></i></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- [EDIT] Contact copy and email address. -->
+    <section class="contact" id="contact">
+      <div class="contact-inner shell">
+        <div>
+          <h2>有想法值得一起做？聊聊。</h2>
+          <p>写下你希望收到的合作类型、工作机会或交流主题。</p>
+        </div>
+        <a class="button" href="mailto:you@example.com">发送邮件 <i data-lucide="mail"></i></a>
+      </div>
+    </section>
+  </main>
+
+  <!-- [EDIT] Footer links. -->
+  <footer>
+    <div class="footer-inner shell">
+      <span>© <span id="year"></span> 你的名字</span>
+      <div class="footer-links">
+        <a href="https://github.com/Kedaya66" target="_blank" rel="noreferrer" aria-label="GitHub">GitHub</a>
+        <a href="mailto:you@example.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <script>
+    if (window.lucide) lucide.createIcons();
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const menuButton = document.querySelector(".menu-button");
+    const navLinks = document.querySelector(".nav-links");
+    menuButton.addEventListener("click", function () {
+      const open = navLinks.classList.toggle("is-open");
+      menuButton.setAttribute("aria-expanded", String(open));
+    });
+    navLinks.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        navLinks.classList.remove("is-open");
+        menuButton.setAttribute("aria-expanded", "false");
+      });
+    });
+  </script>
+</body>
+</html>
