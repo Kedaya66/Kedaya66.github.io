@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="个人作品集、经历介绍与个人作品 | Personal portfolio and experience">
+  <meta name="description" content="张伟峰的个人网站，关注计算机视觉、医学影像、多模态与大模型系统 | Zhang Weifeng's portfolio in computer vision, medical imaging, multimodal AI and LLM systems">
   <meta name="theme-color" content="#111315">
   <title>张伟峰 | Zhang Weifeng</title>
   <style>
@@ -82,7 +82,7 @@
       overflow: hidden;
       color: var(--white);
       background-color: var(--ink);
-      background-image: url("https://github.com/Kedaya66.png?size=1200");
+      background-image: url("./%E5%A4%B4%E5%83%8F1.jpg");
       background-repeat: no-repeat;
       background-position: right center;
       background-size: min(48vw, 700px) auto;
@@ -91,7 +91,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(18, 20, 18, 0.70);
+      background: linear-gradient(90deg, rgba(18,20,18,0.96) 0%, rgba(18,20,18,0.82) 50%, rgba(18,20,18,0.35) 100%);
       pointer-events: none;
     }
     .hero::after {
@@ -280,7 +280,7 @@
     @media (max-width: 900px) {
       h1 { font-size: 64px; }
       .section-title { font-size: 40px; }
-      .hero { background-size: 70vw auto; background-position: 135% center; }
+      .hero { background-size: 70vw auto; background-position: 120% center; }
       .section-head { grid-template-columns: 1fr; gap: 18px; }
       .about-grid { grid-template-columns: 1fr; gap: 38px; }
       .role-row { grid-template-columns: 150px 220px 1fr; gap: 24px; }
@@ -315,9 +315,9 @@
         height: 78svh;
         max-height: 680px;
         background-size: 96vw auto;
-        background-position: 145% center;
+        background-position: 132% center;
       }
-      .hero::before { background: rgba(18, 20, 18, 0.78); }
+      .hero::before { background: linear-gradient(90deg, rgba(18,20,18,0.91) 0%, rgba(18,20,18,0.70) 100%); }
       h1 { font-size: 46px; }
       .hero-copy { font-size: 17px; }
       .eyebrow span { display: block; margin: 6px 0 0; }
@@ -344,7 +344,7 @@
   <!-- [EDIT] Replace the name and navigation labels here. -->
   <header class="site-header">
     <nav class="nav shell" aria-label="主导航 / Main navigation">
-      <a class="brand" href="#top"><span class="zh-only">张伟峰</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Zhang Weifeng</span><span class="dot">.</span></a>
+      <a class="brand" href="#top" aria-label="张伟峰 / Zhang Weifeng">ZWF<span class="dot">.</span></a>
       <div class="nav-actions">
         <div class="nav-links">
           <a href="#about"><span class="zh-only">关于</span><span class="sep-bi"> / </span><span class="en-only" lang="en">About</span></a>
@@ -368,9 +368,9 @@
   <main id="top">
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-inner shell">
-        <p class="eyebrow"><span class="zh-only">你的角色 / 你的专业方向</span><span class="sep-bi"> · </span><span class="en-only" lang="en">Your role / specialty</span></p>
+        <p class="eyebrow"><span class="zh-only">人工智能研究与工程</span><span class="sep-bi"> · </span><span class="en-only" lang="en">AI Research &amp; Engineering</span></p>
         <h1 id="hero-title"><span class="zh-only">张伟峰</span><span class="hero-en-name en-only" lang="en">Zhang Weifeng</span></h1>
-        <p class="hero-copy"><span class="zh-only">一句清晰、有个性的自我介绍。用两行说明你在做什么，以及你希望创造怎样的价值。</span><span class="en-copy en-only" lang="en">A concise, distinctive introduction. In two lines, say what you do and the value you hope to create.</span></p>
+        <p class="hero-copy"><span class="zh-only">聚焦计算机视觉、医学影像与多模态智能，探索学习方法、大模型系统和高效推理，并将研究转化为 AI-native 应用。</span><span class="en-copy en-only" lang="en">Working across computer vision, medical imaging and multimodal AI, with interests in learning methods, LLM systems, efficient inference and AI-native applications.</span></p>
         <div class="actions">
           <a class="button button-primary" href="#work"><span class="zh-only">查看作品</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Work</span> <i data-lucide="arrow-down-right"></i></a>
           <a class="button button-secondary" href="https://github.com/Kedaya66" target="_blank" rel="noreferrer">GitHub <i data-lucide="github"></i></a>
@@ -392,20 +392,23 @@
       <div class="shell">
         <div class="section-head">
           <div class="section-label">01 / <span class="zh-only">关于</span><span class="sep-bi"> · </span><span class="en-only" lang="en">About</span></div>
-          <h2 class="section-title"><span class="zh-only">把复杂问题变成清楚、可靠、真正有用的产品。</span><span class="en-title en-only" lang="en">Turning complex problems into clear, reliable, useful products.</span></h2>
+          <h2 class="section-title"><span class="zh-only">在医学、多模态智能与大模型系统之间，做有落点的交叉研究。</span><span class="en-title en-only" lang="en">Applied research across medicine, multimodal intelligence and LLM systems.</span></h2>
         </div>
         <div class="about-grid">
           <div class="about-copy">
-            <p><span class="zh-only">这里放你的核心介绍：你的专业背景、关注的问题，以及你独特的工作方式。两到三段即可，让访客快速理解你是谁。</span><span class="en-copy en-only" lang="en">Introduce your background, the questions you care about, and the way you work. Keep it concise so visitors quickly understand who you are.</span></p>
-            <p><span class="zh-only">这里可以补充你的长期兴趣、个人判断或正在探索的方向。比起罗列标签，具体的经历和观点更容易被记住。</span><span class="en-copy en-only" lang="en">Add your long-term interests, point of view, or current explorations. Specific experiences and ideas are more memorable than a list of labels.</span></p>
+            <p><span class="zh-only">我的关注点横跨研究、系统与应用：以计算机视觉、医学影像、LLM 和多模态为核心方向，研究视觉与语言模型如何理解真实世界。</span><span class="en-copy en-only" lang="en">My work spans research, systems and applications, centered on computer vision, medical imaging, LLMs and multimodal intelligence.</span></p>
+            <p><span class="zh-only">方法上关注半监督学习与强化学习；系统上关注大模型系统、投机解码与高效推理；最终将这些能力落实为 AI-native 应用。</span><span class="en-copy en-only" lang="en">Methodologically, I focus on semi-supervised and reinforcement learning; at the systems layer, LLM systems, speculative decoding and efficient inference; in practice, AI-native applications.</span></p>
           </div>
           <div class="skill-list" aria-label="技能 / Skills">
-            <span class="skill"><span class="zh-only">技能一</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Skill 01</span></span>
-            <span class="skill"><span class="zh-only">技能二</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Skill 02</span></span>
-            <span class="skill"><span class="zh-only">技能三</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Skill 03</span></span>
-            <span class="skill"><span class="zh-only">技能四</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Skill 04</span></span>
-            <span class="skill"><span class="zh-only">技能五</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Skill 05</span></span>
-            <span class="skill"><span class="zh-only">技能六</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Skill 06</span></span>
+            <span class="skill"><span class="zh-only">计算机视觉</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Computer Vision</span></span>
+            <span class="skill"><span class="zh-only">医学影像</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Medical Imaging</span></span>
+            <span class="skill"><span class="zh-only">多模态</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Multimodal AI</span></span>
+            <span class="skill"><span class="zh-only">大语言模型</span><span class="sep-bi"> / </span><span class="en-only" lang="en">LLM</span></span>
+            <span class="skill"><span class="zh-only">半监督学习</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Semi-supervised Learning</span></span>
+            <span class="skill"><span class="zh-only">强化学习</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Reinforcement Learning</span></span>
+            <span class="skill"><span class="zh-only">大模型系统</span><span class="sep-bi"> / </span><span class="en-only" lang="en">LLM Systems</span></span>
+            <span class="skill"><span class="zh-only">投机解码</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Speculative Decoding</span></span>
+            <span class="skill"><span class="zh-only">AI-native 应用</span><span class="sep-bi"> / </span><span class="en-only" lang="en">AI-native Apps</span></span>
           </div>
         </div>
       </div>
