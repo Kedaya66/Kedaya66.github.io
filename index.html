@@ -228,13 +228,24 @@
     .project-body { padding: 24px; }
     .project-text { display: flex; border-top: 4px solid var(--coral); }
     .project-text .project-body { width: 100%; display: flex; flex-direction: column; }
-    .project-status { margin-top: auto; padding-top: 16px; border-top: 1px solid var(--line); color: var(--coral); font-size: 12px; font-weight: 600; }
+    .project-status { margin-top: auto; padding-top: 16px; border-top: 1px solid var(--line); color: var(--coral); font-size: 12px; font-weight: 800; text-transform: uppercase; }
     .project-meta { display: flex; justify-content: space-between; gap: 16px; margin-bottom: 12px; color: var(--muted); font-size: 12px; font-weight: 800; text-transform: uppercase; }
     .project h3 { margin-bottom: 10px; font-family: Georgia, "Times New Roman", serif; font-size: 26px; font-weight: 500; line-height: 1.25; }
     .project p { margin-bottom: 18px; color: #525960; }
-    .project-link { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 16px; font-weight: 650; }
+    .project-link { display: inline-flex; align-items: center; gap: 8px; font-weight: 850; }
     .project-link:hover { color: var(--coral); }
     .project-link svg { width: 18px; height: 18px; }
+
+    .project-section { padding: 112px 0; }
+    .project-section .section-head {
+      grid-template-columns: 240px 1fr;
+      gap: 40px;
+      align-items: start;
+      margin-bottom: 54px;
+    }
+    .project-section .section-label { display: flex; align-items: center; gap: 12px; }
+    .project-section .section-label::before { content: ""; width: 32px; height: 4px; background: var(--coral); }
+    .project-section .section-title { max-width: 760px; font-size: 46px; line-height: 1.2; letter-spacing: 0; }
 
     .contact {
       color: var(--ink);
@@ -303,11 +314,26 @@
       .section-head { grid-template-columns: 32px 1fr; gap: 16px; }
       .section-title { font-size: 28px; }
       .role-row { grid-template-columns: 1fr; gap: 8px; }
-      .projects { grid-template-columns: 1fr; }
       .contact-inner { min-height: 220px; grid-template-columns: 1fr; gap: 24px; align-content: center; }
       .contact h2 { font-size: 28px; }
       .contact .button { justify-self: start; }
       .footer-inner { padding: 28px 0; flex-direction: column; align-items: flex-start; }
+    }
+
+    @media (min-width: 861px) and (max-width: 1000px) {
+      .project-section .shell { width: min(calc(100% - 48px), var(--max)); }
+      .project-section { padding: 112px 0; }
+    }
+
+    @media (max-width: 900px) {
+      .project-section .section-head { grid-template-columns: 1fr; gap: 18px; }
+      .project-section .section-title { font-size: 40px; }
+    }
+
+    @media (max-width: 860px) {
+      .project-section { padding: 76px 0; }
+      .project-section .section-title { font-size: 34px; }
+      .projects { grid-template-columns: 1fr; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -423,13 +449,31 @@
     </section>
 
     <!-- Public GitHub repositories. -->
-    <section class="section" id="projects">
+    <section class="section project-section" id="projects">
       <div class="shell">
         <div class="section-head">
           <div class="section-label" aria-hidden="true">04</div>
           <h2 class="section-title"><span class="zh-only">GitHub 项目</span><span class="en-title en-only" lang="en">GitHub Projects</span></h2>
         </div>
         <div class="projects">
+          <article class="project project-text">
+            <div class="project-body">
+              <div class="project-meta"><span><span class="zh-only">投机解码训练</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Draft Model Training</span></span><span>2026</span></div>
+              <h3>DeepSpec OPD Megatron</h3>
+              <p><span class="zh-only">基于 DeepSpec，为 DeepSeek-V4-Flash 草稿模型训练接入 Megatron-Core MoE、专家并行和 FP8，并加入 rollout 缓存与共享内存特征传输。</span><span class="en-copy en-only" lang="en">Built on DeepSpec, adding Megatron-Core MoE, expert parallelism and FP8 for DeepSeek-V4-Flash draft-model training, with rollout caching and shared-memory feature transfer.</span></p>
+              <a class="project-link" href="https://github.com/Kedaya66/deepspec-opd-megatron" target="_blank" rel="noreferrer"><span class="zh-only">查看仓库</span><span class="sep-bi"> / </span><span class="en-only" lang="en">View Repository</span> <i data-lucide="arrow-up-right"></i></a>
+              <div class="project-status">Megatron-Core · MoE · FP8 · OPD</div>
+            </div>
+          </article>
+          <article class="project project-text">
+            <div class="project-body">
+              <div class="project-meta"><span><span class="zh-only">推理评测</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Inference Benchmarks</span></span><span>2026</span></div>
+              <h3>Bench Viewer</h3>
+              <p><span class="zh-only">大模型推理基准测试工作台，支持服务部署、任务队列、结果对比、图表与报告，以及工作流编排和 AI 辅助分析。</span><span class="en-copy en-only" lang="en">A web interface for LLM inference benchmarks, with service deployment, job queues, result comparisons, charts and reports, workflow orchestration and AI-assisted analysis.</span></p>
+              <a class="project-link" href="https://github.com/Kedaya66/bench-viewer" target="_blank" rel="noreferrer"><span class="zh-only">查看仓库</span><span class="sep-bi"> / </span><span class="en-only" lang="en">View Repository</span> <i data-lucide="arrow-up-right"></i></a>
+              <div class="project-status">Vue 3 · TypeScript · FastAPI · PostgreSQL</div>
+            </div>
+          </article>
           <article class="project project-text">
             <div class="project-body">
               <div class="project-meta"><span><span class="zh-only">投机解码</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Speculative Decoding</span></span><span>2026</span></div>
@@ -453,7 +497,7 @@
     </section>
 
     <!-- Research projects from CV; submission and publication statuses are distinct. -->
-    <section class="section section-white" id="work">
+    <section class="section section-white project-section" id="work">
       <div class="shell">
         <div class="section-head">
           <div class="section-label" aria-hidden="true">05</div>
