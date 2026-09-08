@@ -207,7 +207,13 @@
     .role-place strong { display: block; font-size: 19px; }
     .role-place span { color: var(--coral); font-weight: 750; }
     .role-copy { margin-bottom: 0; color: #41484f; }
-    .education-row { grid-template-columns: 210px 1fr; }
+    .education-summary { display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 36px; padding-top: 24px; scroll-margin-top: var(--header-h); }
+    .education-label { margin: 0; color: var(--muted); font-size: 14px; font-weight: 650; }
+    .education-list { display: grid; gap: 10px; }
+    .education-entry { display: grid; grid-template-columns: 140px minmax(0, 1fr); gap: 16px; margin: 0; color: #41484f; font-size: 14px; }
+    .education-period { color: var(--muted); white-space: nowrap; }
+    .education-details > span { display: block; }
+    body[data-lang="bi"] .education-details .en-only { margin-top: 2px; color: var(--muted); }
 
     .projects {
       display: grid;
@@ -272,7 +278,6 @@
       h1 { font-size: 64px; }
       .hero { background-size: 70vw auto; background-position: 120% center; }
       .role-row { grid-template-columns: 150px 220px 1fr; gap: 24px; }
-      .education-row { grid-template-columns: 150px 1fr; }
     }
 
     @media (max-width: 1000px) {
@@ -314,6 +319,7 @@
       .section-head { grid-template-columns: 32px 1fr; gap: 16px; }
       .section-title { font-size: 28px; }
       .role-row { grid-template-columns: 1fr; gap: 8px; }
+      .education-summary { grid-template-columns: 1fr; gap: 12px; }
       .contact-inner { min-height: 220px; grid-template-columns: 1fr; gap: 24px; align-content: center; }
       .contact h2 { font-size: 28px; }
       .contact .button { justify-self: start; }
@@ -336,6 +342,10 @@
       .projects { grid-template-columns: 1fr; }
     }
 
+    @media (max-width: 600px) {
+      .education-entry { grid-template-columns: 1fr; gap: 2px; }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       *, *::before, *::after { transition-duration: 0.01ms !important; }
@@ -350,7 +360,6 @@
       <div class="nav-actions">
         <div class="nav-links">
           <a href="#about"><span class="zh-only">技术</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Tools</span></a>
-          <a href="#education"><span class="zh-only">教育</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Education</span></a>
           <a href="#experience"><span class="zh-only">经历</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Experience</span></a>
           <a href="#projects"><span class="zh-only">项目</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Projects</span></a>
           <a href="#work"><span class="zh-only">研究</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Research</span></a>
@@ -403,29 +412,10 @@
       </div>
     </section>
 
-    <section class="section" id="education">
-      <div class="shell">
-        <div class="section-head">
-          <div class="section-label" aria-hidden="true">02</div>
-          <h2 class="section-title"><span class="zh-only">教育</span><span class="en-title en-only" lang="en">Education</span></h2>
-        </div>
-        <div class="timeline">
-          <article class="role-row education-row">
-            <div class="role-time">2022.09 - 2025.06</div>
-            <div class="role-place"><strong><span class="zh-only">汕头大学</span><span class="sep-bi"> · </span><span class="en-only" lang="en">Shantou University</span></strong><span><span class="zh-only">学术型硕士 · 信息与通信工程</span><span class="sep-bi"> · </span><span class="en-only" lang="en">M.Eng. · Information &amp; Communication Engineering</span></span></div>
-          </article>
-          <article class="role-row education-row">
-            <div class="role-time">2017.09 - 2021.06</div>
-            <div class="role-place"><strong><span class="zh-only">西安邮电大学</span><span class="sep-bi"> · </span><span class="en-only" lang="en">Xi'an University of Posts &amp; Telecommunications</span></strong><span><span class="zh-only">工学学士 · 电子信息工程</span><span class="sep-bi"> · </span><span class="en-only" lang="en">B.Eng. · Electronic Information Engineering</span></span></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
     <section class="section section-white" id="experience">
       <div class="shell">
         <div class="section-head">
-          <div class="section-label" aria-hidden="true">03</div>
+          <div class="section-label" aria-hidden="true">02</div>
           <h2 class="section-title"><span class="zh-only">经历</span><span class="en-title en-only" lang="en">Experience</span></h2>
         </div>
         <div class="timeline">
@@ -445,6 +435,19 @@
             <p class="role-copy"><span class="zh-only">做 Agent 微调、强化学习链路优化、投机解码训练、模型部署与评测，以及 AI 应用开发。</span><span class="en-copy en-only" lang="en">Work on agent fine-tuning, RL pipelines, speculative-decoding training, model deployment and evaluation, and AI applications.</span></p>
           </article>
         </div>
+        <div class="education-summary" id="education">
+          <h3 class="education-label"><span class="zh-only">教育</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Education</span></h3>
+          <div class="education-list">
+            <p class="education-entry">
+              <span class="education-period">2022.09 - 2025.06</span>
+              <span class="education-details"><span class="zh-only">汕头大学 · 学术型硕士 · 信息与通信工程</span><span class="en-only" lang="en">Shantou University · M.Eng. · Information &amp; Communication Engineering</span></span>
+            </p>
+            <p class="education-entry">
+              <span class="education-period">2017.09 - 2021.06</span>
+              <span class="education-details"><span class="zh-only">西安邮电大学 · 工学学士 · 电子信息工程</span><span class="en-only" lang="en">Xi'an University of Posts &amp; Telecommunications · B.Eng. · Electronic Information Engineering</span></span>
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -452,7 +455,7 @@
     <section class="section project-section" id="projects">
       <div class="shell">
         <div class="section-head">
-          <div class="section-label" aria-hidden="true">04</div>
+          <div class="section-label" aria-hidden="true">03</div>
           <h2 class="section-title"><span class="zh-only">GitHub 项目</span><span class="en-title en-only" lang="en">GitHub Projects</span></h2>
         </div>
         <div class="projects">
@@ -500,7 +503,7 @@
     <section class="section section-white project-section" id="work">
       <div class="shell">
         <div class="section-head">
-          <div class="section-label" aria-hidden="true">05</div>
+          <div class="section-label" aria-hidden="true">04</div>
           <h2 class="section-title"><span class="zh-only">研究项目</span><span class="en-title en-only" lang="en">Research Projects</span></h2>
         </div>
         <div class="projects">
