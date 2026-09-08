@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="张伟峰的个人网站：计算机视觉、医学影像、多模态、大模型训练推理与 AI 工程 | Zhang Weifeng - AI research and engineering">
+  <meta name="description" content="张伟峰：教育、工作经历、GitHub 项目与研究项目。Zhang Weifeng: education, experience, GitHub and research projects.">
   <meta name="theme-color" content="#111315">
   <title>张伟峰 | Zhang Weifeng</title>
   <style>
@@ -22,6 +22,7 @@
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+    section[id] { scroll-margin-top: var(--header-h); }
     body {
       margin: 0;
       color: var(--ink);
@@ -59,7 +60,8 @@
     .lang-switch { display: grid; grid-template-columns: repeat(3, 36px); height: 32px; padding: 2px; border: 1px solid rgba(255,255,255,0.22); border-radius: 4px; }
     .lang-option { width: 32px; height: 26px; padding: 0; color: #aeb5af; background: transparent; border: 0; border-radius: 2px; font: inherit; font-size: 11px; font-weight: 800; cursor: pointer; }
     .lang-option[aria-pressed="true"] { color: var(--ink); background: var(--white); }
-    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-links { display: flex; align-items: center; gap: 20px; }
+    .nav-links a { white-space: nowrap; }
     .nav-links a { color: #cfd4d8; font-size: 14px; font-weight: 700; }
     .nav-links a:hover { color: var(--white); }
     .menu-button {
@@ -77,8 +79,8 @@
 
     .hero {
       position: relative;
-      min-height: 540px;
-      height: min(82svh, 760px);
+      min-height: 480px;
+      height: min(70svh, 640px);
       overflow: hidden;
       color: var(--white);
       background-color: var(--ink);
@@ -166,48 +168,22 @@
     .button-secondary { color: var(--white); background: rgba(17,19,21,0.62); }
     .button svg { width: 18px; height: 18px; }
 
-    .signal-band { background: var(--white); border-bottom: 1px solid var(--line); }
-    .signals {
-      min-height: 116px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      align-items: center;
-    }
-    .signal { padding: 24px 28px; border-right: 1px solid var(--line); }
-    .signal:first-child { padding-left: 0; }
-    .signal:last-child { border-right: 0; }
-    .signal strong { display: block; font-family: Georgia, "Times New Roman", serif; font-size: 27px; font-weight: 500; line-height: 1.1; }
-    .signal span { color: var(--muted); font-size: 13px; font-weight: 700; }
-
-    .section { padding: 112px 0; }
+    .section { padding: 64px 0; }
     .section-white { background: var(--white); }
     .section-head {
       display: grid;
-      grid-template-columns: 240px 1fr;
-      gap: 40px;
-      align-items: start;
-      margin-bottom: 54px;
+      grid-template-columns: 64px 1fr;
+      gap: 24px;
+      align-items: baseline;
+      margin-bottom: 32px;
     }
     .section-label {
-      display: flex;
-      align-items: center;
-      gap: 12px;
       color: var(--muted);
       font-size: 13px;
       font-weight: 800;
       text-transform: uppercase;
     }
-    .section-label::before { content: ""; width: 32px; height: 4px; background: var(--coral); }
-    .section-title { max-width: 760px; margin-bottom: 0; font-family: Georgia, "Times New Roman", serif; font-size: 46px; font-weight: 500; line-height: 1.2; letter-spacing: 0; }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1.25fr 0.75fr;
-      gap: 76px;
-      align-items: start;
-    }
-    .about-copy { color: #2f353a; font-size: 19px; }
-    .about-copy p:last-child { margin-bottom: 0; }
+    .section-title { margin-bottom: 0; font-family: Georgia, "Times New Roman", serif; font-size: 32px; font-weight: 500; line-height: 1.3; }
     .skill-list { display: flex; flex-wrap: wrap; gap: 10px; }
     .skill {
       padding: 8px 12px;
@@ -231,6 +207,7 @@
     .role-place strong { display: block; font-size: 19px; }
     .role-place span { color: var(--coral); font-weight: 750; }
     .role-copy { margin-bottom: 0; color: #41484f; }
+    .education-row { grid-template-columns: 210px 1fr; }
 
     .projects {
       display: grid;
@@ -251,11 +228,11 @@
     .project-body { padding: 24px; }
     .project-text { display: flex; border-top: 4px solid var(--coral); }
     .project-text .project-body { width: 100%; display: flex; flex-direction: column; }
-    .project-status { margin-top: auto; padding-top: 16px; border-top: 1px solid var(--line); color: var(--coral); font-size: 12px; font-weight: 800; text-transform: uppercase; }
+    .project-status { margin-top: auto; padding-top: 16px; border-top: 1px solid var(--line); color: var(--coral); font-size: 12px; font-weight: 600; }
     .project-meta { display: flex; justify-content: space-between; gap: 16px; margin-bottom: 12px; color: var(--muted); font-size: 12px; font-weight: 800; text-transform: uppercase; }
     .project h3 { margin-bottom: 10px; font-family: Georgia, "Times New Roman", serif; font-size: 26px; font-weight: 500; line-height: 1.25; }
     .project p { margin-bottom: 18px; color: #525960; }
-    .project-link { display: inline-flex; align-items: center; gap: 8px; font-weight: 850; }
+    .project-link { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 16px; font-weight: 650; }
     .project-link:hover { color: var(--coral); }
     .project-link svg { width: 18px; height: 18px; }
 
@@ -265,13 +242,13 @@
       border-top: 1px solid #aeb8ae;
     }
     .contact-inner {
-      min-height: 380px;
+      min-height: 180px;
       display: grid;
       grid-template-columns: 1fr auto;
       gap: 56px;
       align-items: center;
     }
-    .contact h2 { max-width: 800px; margin-bottom: 18px; font-family: Georgia, "Times New Roman", serif; font-size: 52px; font-weight: 500; line-height: 1.12; letter-spacing: 0; }
+    .contact h2 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: 32px; font-weight: 500; line-height: 1.3; }
     .contact p { max-width: 680px; margin-bottom: 0; font-size: 18px; }
     .contact .button { border-color: var(--ink); background: var(--ink); color: var(--white); }
 
@@ -282,15 +259,12 @@
 
     @media (max-width: 900px) {
       h1 { font-size: 64px; }
-      .section-title { font-size: 40px; }
       .hero { background-size: 70vw auto; background-position: 120% center; }
-      .section-head { grid-template-columns: 1fr; gap: 18px; }
-      .about-grid { grid-template-columns: 1fr; gap: 38px; }
       .role-row { grid-template-columns: 150px 220px 1fr; gap: 24px; }
-      .contact h2 { font-size: 46px; }
+      .education-row { grid-template-columns: 150px 1fr; }
     }
 
-    @media (max-width: 860px) {
+    @media (max-width: 1000px) {
       :root { --header-h: 62px; }
       .shell { width: min(calc(100% - 32px), var(--max)); }
       .menu-button { display: inline-flex; }
@@ -315,24 +289,23 @@
       .nav-links a { padding: 12px 4px; }
       .hero {
         min-height: 520px;
-        height: 78svh;
-        max-height: 680px;
+        height: auto;
         background-size: 96vw auto;
         background-position: 132% center;
       }
+      .hero-inner { height: auto; min-height: inherit; padding-top: 40px; padding-bottom: 40px; }
       .hero::before { background: linear-gradient(90deg, rgba(18,20,18,0.91) 0%, rgba(18,20,18,0.70) 100%); }
       h1 { font-size: 46px; }
       .hero-copy { font-size: 17px; }
       .eyebrow span { display: block; margin: 6px 0 0; }
-      .signals { grid-template-columns: 1fr; padding: 12px 0; }
-      .signal { padding: 18px 0; border-right: 0; border-bottom: 1px solid var(--line); }
-      .signal:last-child { border-bottom: 0; }
-      .section { padding: 76px 0; }
-      .section-title { font-size: 34px; }
+      .eyebrow .sep-bi { display: none; }
+      .section { padding: 48px 0; }
+      .section-head { grid-template-columns: 32px 1fr; gap: 16px; }
+      .section-title { font-size: 28px; }
       .role-row { grid-template-columns: 1fr; gap: 8px; }
       .projects { grid-template-columns: 1fr; }
-      .contact-inner { min-height: 430px; grid-template-columns: 1fr; gap: 26px; align-content: center; }
-      .contact h2 { font-size: 38px; }
+      .contact-inner { min-height: 220px; grid-template-columns: 1fr; gap: 24px; align-content: center; }
+      .contact h2 { font-size: 28px; }
       .contact .button { justify-self: start; }
       .footer-inner { padding: 28px 0; flex-direction: column; align-items: flex-start; }
     }
@@ -350,11 +323,11 @@
       <a class="brand" href="#top" aria-label="张伟峰 / Zhang Weifeng">ZWF<span class="dot">.</span></a>
       <div class="nav-actions">
         <div class="nav-links">
-          <a href="#about"><span class="zh-only">关于</span><span class="sep-bi"> / </span><span class="en-only" lang="en">About</span></a>
+          <a href="#about"><span class="zh-only">技术</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Tools</span></a>
           <a href="#education"><span class="zh-only">教育</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Education</span></a>
           <a href="#experience"><span class="zh-only">经历</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Experience</span></a>
           <a href="#projects"><span class="zh-only">项目</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Projects</span></a>
-          <a href="#work"><span class="zh-only">成果</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Work</span></a>
+          <a href="#work"><span class="zh-only">研究</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Research</span></a>
           <a href="#contact"><span class="zh-only">联系</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Contact</span></a>
         </div>
         <div class="lang-switch" role="group" aria-label="语言显示 / Language display">
@@ -373,9 +346,9 @@
   <main id="top">
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-inner shell">
-        <p class="eyebrow"><span class="zh-only">人工智能研究与工程</span><span class="sep-bi"> · </span><span class="en-only" lang="en">AI Research &amp; Engineering</span></p>
+        <p class="eyebrow"><span class="zh-only">九安医疗 · 人工智能室</span><span class="sep-bi"> / </span><span class="en-only" lang="en">iHealth · AI Lab</span></p>
         <h1 id="hero-title"><span class="zh-only">张伟峰</span><span class="hero-en-name en-only" lang="en">Zhang Weifeng</span></h1>
-        <p class="hero-copy"><span class="zh-only">我的研究与工程路径从汕头大学的视觉与医学影像出发，经由明源云的多模态与检索应用，延伸至九安医疗的强化学习、训练推理系统和 AI-native 应用。</span><span class="en-copy en-only" lang="en">My path spans visual and medical imaging research at Shantou University, multimodal and retrieval applications at Ming Yuan Cloud, and reinforcement learning, training/inference systems and AI-native applications at iHealth.</span></p>
+        <p class="hero-copy"><span class="zh-only">从事 Agent 微调、强化学习与大模型训练推理。此前在汕头大学研究医学图像分割，在明源云实习。</span><span class="en-copy en-only" lang="en">I work on agent fine-tuning, reinforcement learning, and LLM training and inference. Previously, I studied medical image segmentation at Shantou University and interned at Ming Yuan Cloud.</span></p>
         <div class="actions">
           <a class="button button-primary" href="#projects"><span class="zh-only">查看项目</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Projects</span> <i data-lucide="arrow-down-right"></i></a>
           <a class="button button-secondary" href="https://github.com/Kedaya66" target="_blank" rel="noreferrer">GitHub <i data-lucide="github"></i></a>
@@ -383,38 +356,23 @@
       </div>
     </section>
 
-    <!-- [EDIT] Three quick facts. -->
-    <section class="signal-band" aria-label="个人概览 / Profile overview">
-      <div class="signals shell">
-        <div class="signal"><strong><span class="zh-only">3 段经历</span><span class="sep-bi"> / </span><span class="en-only" lang="en">3 Stages</span></strong><span><span class="zh-only">学术与产业</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Academia &amp; Industry</span></span></div>
-        <div class="signal"><strong><span class="zh-only">研究 · 系统</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Research · Systems</span></strong><span><span class="zh-only">能力路径</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Practice</span></span></div>
-        <div class="signal"><strong><span class="zh-only">视觉 → 大模型</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Vision → LLM</span></strong><span><span class="zh-only">技术演进</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Evolution</span></span></div>
-      </div>
-    </section>
-
-    <!-- [EDIT] About text and skill tags. -->
+    <!-- [EDIT] Technical tools and methods. -->
     <section class="section section-white" id="about">
       <div class="shell">
         <div class="section-head">
-          <div class="section-label">01 / <span class="zh-only">关于</span><span class="sep-bi"> · </span><span class="en-only" lang="en">About</span></div>
-          <h2 class="section-title"><span class="zh-only">从视觉研究到大模型系统，让技术路径在真实场景中持续演进。</span><span class="en-title en-only" lang="en">From visual research to LLM systems, evolving through real-world problems.</span></h2>
+          <div class="section-label" aria-hidden="true">01</div>
+          <h2 class="section-title"><span class="zh-only">技术与工具</span><span class="en-title en-only" lang="en">Methods &amp; Tools</span></h2>
         </div>
-        <div class="about-grid">
-          <div class="about-copy">
-            <p><span class="zh-only">在汕头大学工学院，我从计算机视觉和医学影像出发，围绕半监督学习、图像分割、数据效率、表征学习与模型泛化开展研究。</span><span class="en-copy en-only" lang="en">At the College of Engineering, Shantou University, I worked on computer vision and medical imaging, including semi-supervised learning, image segmentation, data-efficient learning, representation learning and model generalization.</span></p>
-            <p><span class="zh-only">进入产业后，研究与工程实践依次延伸至多模态理解、语义检索与 RAG、强化学习、训练推理系统、投机解码、Agent 微调及 AI-native 应用。</span><span class="en-copy en-only" lang="en">In industry, my work expanded into multimodal understanding, semantic retrieval and RAG, reinforcement learning, training and inference systems, speculative decoding, agent fine-tuning and AI-native applications.</span></p>
-          </div>
-          <div class="skill-list" aria-label="技术栈 / Technical stack">
-            <span class="skill">Python</span>
-            <span class="skill">PyTorch</span>
-            <span class="skill">Transformer · ViT · UNet</span>
-            <span class="skill">CLIP · LLaVA</span>
-            <span class="skill">DeepSpeed · Megatron</span>
-            <span class="skill">vLLM · SGLang</span>
-            <span class="skill">SFT · DPO · GRPO</span>
-            <span class="skill">LoRA</span>
-            <span class="skill">Diffusion · Rectified Flow</span>
-          </div>
+        <div class="skill-list" aria-label="技术与工具 / Methods and tools">
+          <span class="skill">Python</span>
+          <span class="skill">PyTorch</span>
+          <span class="skill">Transformer · ViT · UNet</span>
+          <span class="skill">CLIP · LLaVA</span>
+          <span class="skill">DeepSpeed · Megatron</span>
+          <span class="skill">vLLM · SGLang</span>
+          <span class="skill">SFT · DPO · GRPO</span>
+          <span class="skill">LoRA</span>
+          <span class="skill">Diffusion · Rectified Flow</span>
         </div>
       </div>
     </section>
@@ -422,19 +380,17 @@
     <section class="section" id="education">
       <div class="shell">
         <div class="section-head">
-          <div class="section-label">02 / <span class="zh-only">教育</span><span class="sep-bi"> · </span><span class="en-only" lang="en">Education</span></div>
-          <h2 class="section-title"><span class="zh-only">从电子信息工程到信息与通信工程，建立扎实的视觉与机器学习基础。</span><span class="en-title en-only" lang="en">A foundation in electronic information, communication engineering, vision and machine learning.</span></h2>
+          <div class="section-label" aria-hidden="true">02</div>
+          <h2 class="section-title"><span class="zh-only">教育</span><span class="en-title en-only" lang="en">Education</span></h2>
         </div>
         <div class="timeline">
-          <article class="role-row">
+          <article class="role-row education-row">
             <div class="role-time">2022.09 - 2025.06</div>
             <div class="role-place"><strong><span class="zh-only">汕头大学</span><span class="sep-bi"> · </span><span class="en-only" lang="en">Shantou University</span></strong><span><span class="zh-only">学术型硕士 · 信息与通信工程</span><span class="sep-bi"> · </span><span class="en-only" lang="en">M.Eng. · Information &amp; Communication Engineering</span></span></div>
-            <p class="role-copy"><span class="zh-only">课程与研究基础涵盖现代神经网络、机器学习、图像处理、矩阵理论和模式识别。</span><span class="en-copy en-only" lang="en">Coursework and research foundations in modern neural networks, machine learning, image processing, matrix theory and pattern recognition.</span></p>
           </article>
-          <article class="role-row">
+          <article class="role-row education-row">
             <div class="role-time">2017.09 - 2021.06</div>
             <div class="role-place"><strong><span class="zh-only">西安邮电大学</span><span class="sep-bi"> · </span><span class="en-only" lang="en">Xi'an University of Posts &amp; Telecommunications</span></strong><span><span class="zh-only">工学学士 · 电子信息工程</span><span class="sep-bi"> · </span><span class="en-only" lang="en">B.Eng. · Electronic Information Engineering</span></span></div>
-            <p class="role-copy"><span class="zh-only">系统学习数字图像处理、数字信号处理、信号与系统等核心课程。</span><span class="en-copy en-only" lang="en">Core training in digital image processing, digital signal processing, signals and systems.</span></p>
           </article>
         </div>
       </div>
@@ -443,24 +399,24 @@
     <section class="section section-white" id="experience">
       <div class="shell">
         <div class="section-head">
-          <div class="section-label">03 / <span class="zh-only">经历</span><span class="sep-bi"> · </span><span class="en-only" lang="en">Experience</span></div>
-          <h2 class="section-title"><span class="zh-only">在学术研究、产业应用与大模型系统之间，建立连续的能力路径。</span><span class="en-title en-only" lang="en">A continuous path across academic research, industry applications and LLM systems.</span></h2>
+          <div class="section-label" aria-hidden="true">03</div>
+          <h2 class="section-title"><span class="zh-only">经历</span><span class="en-title en-only" lang="en">Experience</span></h2>
         </div>
         <div class="timeline">
           <article class="role-row">
             <div class="role-time">2022.09 - 2025.06</div>
             <div class="role-place"><strong><span class="zh-only">汕头大学工学院</span><span class="sep-bi"> · </span><span class="en-only" lang="en">College of Engineering, Shantou University</span></strong><span><span class="zh-only">计算机视觉与医学影像研究</span><span class="sep-bi"> · </span><span class="en-only" lang="en">Computer Vision &amp; Medical Imaging</span></span></div>
-            <p class="role-copy"><span class="zh-only">主导不完整、不完全与带噪监督下的高效学习研究，完成数据处理、算法设计、训练评测与论文写作；同时参与骶髂关节自动分级和单图像去模糊项目。</span><span class="en-copy en-only" lang="en">Led research on data-efficient learning under incomplete, partial and noisy supervision, covering data processing, algorithm design, training, evaluation and paper writing; also contributed to automated sacroiliitis grading and single-image deblurring.</span></p>
+            <p class="role-copy"><span class="zh-only">研究半监督医学图像分割、样本选择与一致性学习；参与骶髂关节炎分级和图像去模糊项目。</span><span class="en-copy en-only" lang="en">Researched semi-supervised medical image segmentation, sample selection and consistency learning. Contributed to sacroiliitis grading and image deblurring projects.</span></p>
           </article>
           <article class="role-row">
             <div class="role-time">2024.10 - 2025.01</div>
             <div class="role-place"><strong><span class="zh-only">明源云 · 人工智能事业部</span><span class="sep-bi"> · </span><span class="en-only" lang="en">Ming Yuan Cloud · AI Division</span></strong><span><span class="zh-only">算法实习生</span><span class="sep-bi"> · </span><span class="en-only" lang="en">Algorithm Intern</span></span></div>
-            <p class="role-copy"><span class="zh-only">主导产品算法需求的端到端开发，完成视频切片、文本标签提取与评测、标签匹配、图像一致性检测和短文本语义聚类；同时评测开源 LLM 与多模态模型，并实践 DeepSpeed、Megatron、vLLM 与 SGLang。</span><span class="en-copy en-only" lang="en">Led end-to-end product algorithm development across video segmentation, text-tag extraction and evaluation, tag matching, image consistency checks and short-text semantic clustering; evaluated open LLMs and multimodal models while working with DeepSpeed, Megatron, vLLM and SGLang.</span></p>
+            <p class="role-copy"><span class="zh-only">开发视频切片、文本标签提取与匹配、图像一致性检测、短文本聚类功能；评测大语言模型与多模态模型。</span><span class="en-copy en-only" lang="en">Developed video segmentation, text-tag extraction and matching, image consistency checks and short-text clustering. Evaluated LLMs and multimodal models.</span></p>
           </article>
           <article class="role-row">
             <div class="role-time"><span class="zh-only">当前</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Present</span></div>
             <div class="role-place"><strong><span class="zh-only">九安医疗 · 人工智能室</span><span class="sep-bi"> · </span><span class="en-only" lang="en">iHealth · AI Lab</span></strong><span><span class="zh-only">强化学习与训练推理系统</span><span class="sep-bi"> · </span><span class="en-only" lang="en">Reinforcement Learning &amp; Training/Inference Systems</span></span></div>
-            <p class="role-copy"><span class="zh-only">围绕 Agent 微调、强化学习链路优化、模型部署与评测、实验分析与性能诊断、AI-native 应用开发，以及投机解码模型训练框架开展工作。</span><span class="en-copy en-only" lang="en">Work spanning agent fine-tuning, reinforcement learning pipeline optimization, model deployment and evaluation, experiment analysis and performance diagnosis, AI-native applications, and a speculative decoding model training framework.</span></p>
+            <p class="role-copy"><span class="zh-only">做 Agent 微调、强化学习链路优化、投机解码训练、模型部署与评测，以及 AI 应用开发。</span><span class="en-copy en-only" lang="en">Work on agent fine-tuning, RL pipelines, speculative-decoding training, model deployment and evaluation, and AI applications.</span></p>
           </article>
         </div>
       </div>
@@ -470,53 +426,53 @@
     <section class="section" id="projects">
       <div class="shell">
         <div class="section-head">
-          <div class="section-label">04 / <span class="zh-only">GitHub 项目</span><span class="sep-bi"> · </span><span class="en-only" lang="en">GitHub Projects</span></div>
-          <h2 class="section-title"><span class="zh-only">将研究与系统工作沉淀为可复用、可验证的开源实践。</span><span class="en-title en-only" lang="en">Turning research and systems work into reusable, verifiable open-source practice.</span></h2>
+          <div class="section-label" aria-hidden="true">04</div>
+          <h2 class="section-title"><span class="zh-only">GitHub 项目</span><span class="en-title en-only" lang="en">GitHub Projects</span></h2>
         </div>
         <div class="projects">
           <article class="project project-text">
             <div class="project-body">
-              <div class="project-meta"><span><span class="zh-only">开源 · 大模型系统</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Open Source · LLM Systems</span></span><span>2026</span></div>
+              <div class="project-meta"><span><span class="zh-only">投机解码</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Speculative Decoding</span></span><span>2026</span></div>
               <h3>DeepSpec-OPD</h3>
-              <p><span class="zh-only">基于 DeepSeek DeepSpec 扩展面向投机解码草稿模型的在线训练与同策略蒸馏，支持 DeepSeek-V4-Flash、SGLang 在线特征流、并发 rollout 预取与 FSDP2 训练。</span><span class="en-copy en-only" lang="en">An extension of DeepSeek DeepSpec for online training and on-policy distillation of speculative-decoding draft models, with DeepSeek-V4-Flash, SGLang feature streaming, concurrent rollout prefetching and FSDP2 training.</span></p>
+              <p><span class="zh-only">基于 DeepSeek 的 DeepSpec，增加草稿模型同策略蒸馏、SGLang 在线特征读取和并发 rollout，适配 DeepSeek-V4-Flash。</span><span class="en-copy en-only" lang="en">A fork of DeepSeek's DeepSpec adding draft-model on-policy distillation, SGLang feature streaming and concurrent rollouts, with DeepSeek-V4-Flash support.</span></p>
               <a class="project-link" href="https://github.com/Kedaya66/deepspec-opd" target="_blank" rel="noreferrer"><span class="zh-only">查看仓库</span><span class="sep-bi"> / </span><span class="en-only" lang="en">View Repository</span> <i data-lucide="arrow-up-right"></i></a>
-              <div class="project-status">Python · SGLang · FSDP2 · Speculative Decoding</div>
+              <div class="project-status">Python · SGLang · FSDP2</div>
             </div>
           </article>
           <article class="project project-text">
             <div class="project-body">
-              <div class="project-meta"><span><span class="zh-only">技术实践</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Technical Practice</span></span><span>2026</span></div>
+              <div class="project-meta"><span><span class="zh-only">推理部署</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Inference Deployment</span></span><span>2026</span></div>
               <h3>llm-deploy</h3>
-              <p><span class="zh-only">用于整理大模型推理服务部署实践的公开仓库，聚焦服务化与部署经验；当前处于内容建设阶段。</span><span class="en-copy en-only" lang="en">A public repository for documenting practical LLM inference serving and deployment work; currently under active development.</span></p>
+              <p><span class="zh-only">大模型推理服务部署实践仓库。目前 README 仅有标题，尚未上传部署代码。</span><span class="en-copy en-only" lang="en">A repository for LLM inference deployment. The README currently contains only a title; no deployment code has been uploaded.</span></p>
               <a class="project-link" href="https://github.com/Kedaya66/llm-deploy" target="_blank" rel="noreferrer"><span class="zh-only">查看仓库</span><span class="sep-bi"> / </span><span class="en-only" lang="en">View Repository</span> <i data-lucide="arrow-up-right"></i></a>
-              <div class="project-status"><span class="zh-only">持续建设中</span><span class="sep-bi"> / </span><span class="en-only" lang="en">In Progress</span> · LLM Deployment</div>
+              <div class="project-status">README · MIT License</div>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Selected research and publications from CV. -->
+    <!-- Research projects from CV; submission and publication statuses are distinct. -->
     <section class="section section-white" id="work">
       <div class="shell">
         <div class="section-head">
-          <div class="section-label">05 / <span class="zh-only">代表成果</span><span class="sep-bi"> · </span><span class="en-only" lang="en">Selected Work</span></div>
-          <h2 class="section-title"><span class="zh-only">以可验证的研究结果，连接算法、系统与真实问题。</span><span class="en-title en-only" lang="en">Connecting algorithms, systems and real problems through verifiable research outcomes.</span></h2>
+          <div class="section-label" aria-hidden="true">05</div>
+          <h2 class="section-title"><span class="zh-only">研究项目</span><span class="en-title en-only" lang="en">Research Projects</span></h2>
         </div>
         <div class="projects">
           <article class="project project-text">
             <div class="project-body">
               <div class="project-meta"><span><span class="zh-only">半监督医学分割</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Semi-supervised Medical Segmentation</span></span><span>2023 - 2024</span></div>
               <h3>W2S+: Adapting Weak-to-Strong Consistency</h3>
-              <p><span class="zh-only">设计代表性子集选择与双阶段强弱一致性方法，在多个公开医学分割数据集上降低标注成本并提升半监督分割表现。</span><span class="en-copy en-only" lang="en">Designed representative-subset selection and two-stage weak-to-strong consistency methods to reduce annotation cost and improve semi-supervised segmentation across public medical datasets.</span></p>
+              <p><span class="zh-only">研究代表性子集选择与双阶段强弱一致性，用于半监督医学图像分割。</span><span class="en-copy en-only" lang="en">Studied representative-subset selection and two-stage weak-to-strong consistency for semi-supervised medical image segmentation.</span></p>
               <div class="project-status"><span class="zh-only">AAAI 2025 投稿 · 第一作者</span><span class="sep-bi"> / </span><span class="en-only" lang="en">AAAI 2025 Submission · First Author</span></div>
             </div>
           </article>
           <article class="project project-text">
             <div class="project-body">
               <div class="project-meta"><span><span class="zh-only">医学影像</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Medical Imaging</span></span><span>2022 - 2024</span></div>
-              <h3><span class="zh-only">骶髂关节炎自动分级诊断</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Automated Sacroiliitis Grading</span></h3>
-              <p><span class="zh-only">结合 MRI、CT、影像组学与深度学习，参与构建多模态数据集和自动分级系统，辅助影像科医生进行诊断。</span><span class="en-copy en-only" lang="en">Combined MRI, CT, radiomics and deep learning to build multimodal datasets and automated grading systems for radiology-assisted diagnosis.</span></p>
+              <h3><span class="zh-only">骶髂关节炎自动分级</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Automated Sacroiliitis Grading</span></h3>
+              <p><span class="zh-only">参与 MRI、CT 数据集整理，以及基于影像组学和深度学习的自动分级研究。</span><span class="en-copy en-only" lang="en">Contributed to MRI and CT dataset preparation and automated grading research using radiomics and deep learning.</span></p>
               <div class="project-status">Physics in Medicine &amp; Biology 2024 · CCBR 2022</div>
             </div>
           </article>
@@ -524,15 +480,15 @@
             <div class="project-body">
               <div class="project-meta"><span><span class="zh-only">大语言模型</span><span class="sep-bi"> / </span><span class="en-only" lang="en">LLM</span></span><span>2025</span></div>
               <h3><span class="zh-only">中国传统音乐乐谱生成</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Chinese Traditional Music Score Generation</span></h3>
-              <p><span class="zh-only">构建乐谱格式转换和 OMR 流程，将图片与 PDF 转为可编辑 MusicXML，并面向指令微调准备数据、训练与评测链路。</span><span class="en-copy en-only" lang="en">Built score-format conversion and OMR workflows from images and PDFs to editable MusicXML, together with data, training and evaluation pipelines for instruction tuning.</span></p>
-              <div class="project-status"><span class="zh-only">个人主导</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Project Lead</span></div>
+              <p><span class="zh-only">将乐谱图片和 PDF 转为 MusicXML，准备指令微调数据并搭建训练、评测流程。</span><span class="en-copy en-only" lang="en">Converted score images and PDFs to MusicXML, prepared instruction-tuning data, and built training and evaluation workflows.</span></p>
+              <div class="project-status">OMR · MusicXML · SFT</div>
             </div>
           </article>
           <article class="project project-text">
             <div class="project-body">
               <div class="project-meta"><span><span class="zh-only">图像复原</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Image Restoration</span></span><span>2023</span></div>
               <h3>Strip-FFT Transformer for Single Image Deblurring</h3>
-              <p><span class="zh-only">参与 CNN 与 Transformer 混合网络研究，在保持去模糊性能的同时减少模型参数量与显存占用。</span><span class="en-copy en-only" lang="en">Contributed to a hybrid CNN-Transformer network that retained strong deblurring performance while reducing parameter count and memory usage.</span></p>
+              <p><span class="zh-only">参与基于 CNN 与 Transformer 混合网络的单图像去模糊研究。</span><span class="en-copy en-only" lang="en">Contributed to single-image deblurring research using a hybrid CNN-Transformer network.</span></p>
               <div class="project-status"><span class="zh-only">ICIG 2023 录用 · 学生第三作者</span><span class="sep-bi"> / </span><span class="en-only" lang="en">ICIG 2023 · Student Third Author</span></div>
             </div>
           </article>
@@ -543,10 +499,9 @@
     <section class="contact" id="contact">
       <div class="contact-inner shell">
         <div>
-          <h2><span class="zh-only">欢迎交流研究、系统工程与 AI-native 应用。</span><span class="en-title en-only" lang="en">Open to conversations on research, systems engineering and AI-native applications.</span></h2>
-          <p><span class="zh-only">可通过 GitHub 了解我的公开项目与后续工作。</span><span class="en-copy en-only" lang="en">Visit GitHub for public projects and future work.</span></p>
+          <h2><span class="zh-only">联系</span><span class="en-title en-only" lang="en">Contact</span></h2>
         </div>
-        <a class="button" href="https://github.com/Kedaya66" target="_blank" rel="noreferrer"><span class="zh-only">查看 GitHub</span><span class="sep-bi"> / </span><span class="en-only" lang="en">View GitHub</span> <i data-lucide="github"></i></a>
+        <a class="button" href="https://github.com/Kedaya66" target="_blank" rel="noreferrer">GitHub · Kedaya66 <i data-lucide="github"></i></a>
       </div>
     </section>
   </main>
