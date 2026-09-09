@@ -1,6 +1,5 @@
 <!doctype html>
-<html lang="zh-CN">
-<head>
+<html lang="zh-CN"><head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="张伟峰：教育、工作经历、GitHub 项目与研究项目。Zhang Weifeng: education, experience, GitHub and research projects.">
@@ -195,6 +194,25 @@
       font-weight: 750;
     }
 
+    .participated {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0 48px;
+      border-top: 1px solid var(--line);
+    }
+    .participated-item {
+      display: grid;
+      grid-template-columns: 120px minmax(0, 1fr);
+      gap: 20px;
+      padding: 22px 0 24px;
+      border-bottom: 1px solid var(--line);
+    }
+    .participated-meta { color: var(--muted); font-size: 12px; font-weight: 800; line-height: 1.5; text-transform: uppercase; }
+    .participated-meta span { display: block; }
+    .participated-body h3 { margin-bottom: 7px; font-family: Georgia, "Times New Roman", serif; font-size: 22px; font-weight: 500; line-height: 1.3; }
+    .participated-body p { margin-bottom: 0; color: #525960; font-size: 14px; line-height: 1.65; }
+    body[data-lang="bi"] .participated-body h3 .en-only { display: block; margin-top: 3px; color: var(--muted); font-family: inherit; font-size: 16px; }
+
     .timeline { border-top: 1px solid var(--line); }
     .role-row {
       display: grid;
@@ -357,11 +375,13 @@
       .project-section { padding: 76px 0; }
       .project-section .section-title { font-size: 34px; }
       .projects { grid-template-columns: 1fr; }
+      .participated { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 600px) {
       .education-entry { grid-template-columns: 1fr; gap: 2px; }
       .outcomes { grid-template-columns: 1fr; }
+      .participated-item { grid-template-columns: 1fr; gap: 5px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -369,7 +389,727 @@
       *, *::before, *::after { transition-duration: 0.01ms !important; }
     }
   </style>
-</head>
+<style type="text/css">@font-face {
+  font-family: "xm-iconfont";
+  src: url('//at.alicdn.com/t/font_792691_ptvyboo0bno.eot?t=1574048839056');
+  /* IE9 */
+  src: url('//at.alicdn.com/t/font_792691_ptvyboo0bno.eot?t=1574048839056#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('data:application/x-font-woff2;charset=utf-8;base64,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') format('woff2'), url('//at.alicdn.com/t/font_792691_ptvyboo0bno.woff?t=1574048839056') format('woff'), url('//at.alicdn.com/t/font_792691_ptvyboo0bno.ttf?t=1574048839056') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */ url('//at.alicdn.com/t/font_792691_ptvyboo0bno.svg?t=1574048839056#iconfont') format('svg');
+  /* iOS 4.1- */
+}
+.xm-iconfont {
+  font-family: "xm-iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.xm-icon-quanxuan:before {
+  content: "\e62c";
+}
+.xm-icon-caidan:before {
+  content: "\e610";
+}
+.xm-icon-fanxuan:before {
+  content: "\e837";
+}
+.xm-icon-pifu:before {
+  content: "\e668";
+}
+.xm-icon-qingkong:before {
+  content: "\e63e";
+}
+.xm-icon-sousuo:before {
+  content: "\e600";
+}
+.xm-icon-danx:before {
+  content: "\e62b";
+}
+.xm-icon-duox:before {
+  content: "\e613";
+}
+.xm-icon-close:before {
+  content: "\e601";
+}
+.xm-icon-expand:before {
+  content: "\e641";
+}
+.xm-icon-banxuan:before {
+  content: "\e60d";
+}
+</style><style type="text/css">@-webkit-keyframes xm-upbit {
+  from {
+    -webkit-transform: translate3d(0, 30px, 0);
+    opacity: 0.3;
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+@keyframes xm-upbit {
+  from {
+    transform: translate3d(0, 30px, 0);
+    opacity: 0.3;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes loader {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes loader {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+xm-select {
+  background-color: #FFF;
+  position: relative;
+  border: 1px solid #E6E6E6;
+  border-radius: 2px;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  outline: none;
+}
+xm-select * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 400;
+  text-overflow: ellipsis;
+  user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+xm-select:hover,
+xm-select:focus {
+  border-color: #C0C4CC;
+}
+xm-select > .xm-tips {
+  color: #999999;
+  padding: 0 10px;
+  position: absolute;
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+xm-select > .xm-icon {
+  display: inline-block;
+  overflow: hidden;
+  position: absolute;
+  width: 0;
+  height: 0;
+  right: 10px;
+  top: 50%;
+  margin-top: -3px;
+  cursor: pointer;
+  border: 6px dashed transparent;
+  border-top-color: #C2C2C2;
+  border-top-style: solid;
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+}
+xm-select > .xm-icon-expand {
+  margin-top: -9px;
+  transform: rotate(180deg);
+}
+xm-select > .xm-label.single-row {
+  position: absolute;
+  top: 0;
+  bottom: 0px;
+  left: 0px;
+  right: 30px;
+  overflow: auto hidden;
+}
+xm-select > .xm-label.single-row .scroll {
+  overflow-y: hidden;
+}
+xm-select > .xm-label.single-row .label-content {
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+xm-select > .xm-label.auto-row .label-content {
+  flex-wrap: wrap;
+  padding-right: 30px !important;
+}
+xm-select > .xm-label.auto-row .xm-label-block > span {
+  white-space: unset;
+  height: 100%;
+}
+xm-select > .xm-label .scroll .label-content {
+  display: flex;
+  padding: 3px 10px;
+}
+xm-select > .xm-label .xm-label-block {
+  display: flex;
+  position: relative;
+  padding: 0px 5px;
+  margin: 2px 5px 2px 0;
+  border-radius: 3px;
+  align-items: baseline;
+  color: #FFF;
+}
+xm-select > .xm-label .xm-label-block > span {
+  display: flex;
+  color: #FFF;
+  white-space: nowrap;
+}
+xm-select > .xm-label .xm-label-block > i {
+  color: #FFF;
+  margin-left: 8px;
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+}
+xm-select > .xm-label .xm-label-block.disabled {
+  background-color: #C2C2C2 !important;
+  cursor: no-drop !important;
+}
+xm-select > .xm-label .xm-label-block.disabled > i {
+  cursor: no-drop !important;
+}
+xm-select > .xm-body {
+  position: absolute;
+  left: 0;
+  top: 42px;
+  padding: 5px 0;
+  z-index: 999;
+  width: 100%;
+  min-width: fit-content;
+  border: 1px solid #E6E6E6;
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+  animation-name: xm-upbit;
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+}
+xm-select > .xm-body .scroll-body {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+xm-select > .xm-body .scroll-body::-webkit-scrollbar {
+  width: 8px;
+}
+xm-select > .xm-body .scroll-body::-webkit-scrollbar-track {
+  -webkit-border-radius: 2em;
+  -moz-border-radius: 2em;
+  -ms-border-radius: 2em;
+  border-radius: 2em;
+  background-color: #FFF;
+}
+xm-select > .xm-body .scroll-body::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 2em;
+  -moz-border-radius: 2em;
+  -ms-border-radius: 2em;
+  border-radius: 2em;
+  background-color: #C2C2C2;
+}
+xm-select > .xm-body.up {
+  top: auto;
+  bottom: 42px;
+}
+xm-select > .xm-body.relative {
+  position: relative;
+  display: block !important;
+  top: 0;
+  box-shadow: none;
+  border: none;
+  animation-name: none;
+  animation-duration: 0;
+  min-width: 100%;
+}
+xm-select > .xm-body .xm-group {
+  cursor: default;
+}
+xm-select > .xm-body .xm-group-item {
+  display: inline-block;
+  cursor: pointer;
+  padding: 0 10px;
+  color: #999;
+  font-size: 12px;
+}
+xm-select > .xm-body .xm-option {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 0 10px;
+  cursor: pointer;
+}
+xm-select > .xm-body .xm-option-icon {
+  color: transparent;
+  display: flex;
+  border: 1px solid #E6E6E6;
+  border-radius: 3px;
+  justify-content: center;
+  align-items: center;
+}
+xm-select > .xm-body .xm-option-icon.xm-custom-icon {
+  color: unset;
+  border: unset;
+}
+xm-select > .xm-body .xm-option-icon-hidden {
+  margin-right: -10px;
+}
+xm-select > .xm-body .xm-option-icon.xm-icon-danx {
+  border-radius: 100%;
+}
+xm-select > .xm-body .xm-option-content {
+  display: flex;
+  position: relative;
+  padding-left: 15px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  ;
+  width: calc(100% - 20px);
+}
+xm-select > .xm-body .xm-option.hide-icon .xm-option-content {
+  padding-left: 0;
+}
+xm-select > .xm-body .xm-option.selected.hide-icon .xm-option-content {
+  color: #FFF !important;
+}
+xm-select > .xm-body .xm-option .loader {
+  width: 0.8em;
+  height: 0.8em;
+  margin-right: 6px;
+  color: #C2C2C2;
+}
+xm-select > .xm-body .xm-select-empty {
+  text-align: center;
+  color: #999;
+}
+xm-select > .xm-body .disabled {
+  cursor: no-drop;
+}
+xm-select > .xm-body .disabled:hover {
+  background-color: #FFF;
+}
+xm-select > .xm-body .disabled .xm-option-icon {
+  border-color: #C2C2C2 !important;
+}
+xm-select > .xm-body .disabled .xm-option-content {
+  color: #C2C2C2 !important;
+}
+xm-select > .xm-body .disabled.selected > .xm-option-icon {
+  color: #C2C2C2 !important;
+}
+xm-select > .xm-body .xm-search {
+  background-color: #FFF !important;
+  position: relative;
+  padding: 0 10px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+xm-select > .xm-body .xm-search > i {
+  position: absolute;
+  color: ;
+}
+xm-select > .xm-body .xm-search-input {
+  border: none;
+  border-bottom: 1px solid #E6E6E6;
+  padding-left: 27px;
+  cursor: text;
+}
+xm-select > .xm-body .xm-paging {
+  padding: 0 10px;
+  display: flex;
+  margin-top: 5px;
+}
+xm-select > .xm-body .xm-paging > span:first-child {
+  border-radius: 2px 0 0 2px;
+}
+xm-select > .xm-body .xm-paging > span:last-child {
+  border-radius: 0 2px 2px 0;
+}
+xm-select > .xm-body .xm-paging > span {
+  display: flex;
+  flex: auto;
+  justify-content: center;
+  vertical-align: middle;
+  margin: 0 -1px 0 0;
+  background-color: #fff;
+  color: #333;
+  font-size: 12px;
+  border: 1px solid #e2e2e2;
+  flex-wrap: nowrap;
+  width: 100%;
+  overflow: hidden;
+  min-width: 50px;
+}
+xm-select > .xm-body .xm-toolbar {
+  padding: 0 10px;
+  display: flex;
+  margin: -3px 0;
+  cursor: default;
+}
+xm-select > .xm-body .xm-toolbar .toolbar-tag {
+  cursor: pointer;
+  display: flex;
+  margin-right: 20px;
+  color: ;
+  align-items: baseline;
+}
+xm-select > .xm-body .xm-toolbar .toolbar-tag:hover {
+  opacity: 0.8;
+}
+xm-select > .xm-body .xm-toolbar .toolbar-tag:active {
+  opacity: 1;
+}
+xm-select > .xm-body .xm-toolbar .toolbar-tag > i {
+  margin-right: 2px;
+  font-size: 14px;
+}
+xm-select > .xm-body .xm-toolbar .toolbar-tag:last-child {
+  margin-right: 0;
+}
+xm-select > .xm-body .xm-body-custom {
+  line-height: initial;
+  cursor: default;
+}
+xm-select > .xm-body .xm-body-custom * {
+  box-sizing: initial;
+}
+xm-select > .xm-body .xm-tree {
+  position: relative;
+}
+xm-select > .xm-body .xm-tree-icon {
+  display: inline-block;
+  margin-right: 3px;
+  cursor: pointer;
+  border: 6px dashed transparent;
+  border-left-color: #C2C2C2;
+  border-left-style: solid;
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  z-index: 2;
+  visibility: hidden;
+}
+xm-select > .xm-body .xm-tree-icon.expand {
+  margin-top: 3px;
+  margin-right: 5px;
+  margin-left: -2px;
+  transform: rotate(90deg);
+}
+xm-select > .xm-body .xm-tree-icon.xm-visible {
+  visibility: visible;
+}
+xm-select > .xm-body .xm-tree .left-line {
+  position: absolute;
+  left: 13px;
+  width: 0;
+  z-index: 1;
+  border-left: 1px dotted #c0c4cc !important;
+}
+xm-select > .xm-body .xm-tree .top-line {
+  position: absolute;
+  left: 13px;
+  height: 0;
+  z-index: 1;
+  border-top: 1px dotted #c0c4cc !important;
+}
+xm-select > .xm-body .xm-tree .xm-tree-icon + .top-line {
+  margin-left: 1px;
+}
+xm-select > .xm-body .scroll-body > .xm-tree > .xm-option > .top-line,
+xm-select > .xm-body .scroll-body > .xm-option > .top-line {
+  width: 0 !important;
+}
+xm-select > .xm-body .xm-cascader-box {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding: 5px 0;
+  border: 1px solid #E6E6E6;
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+  margin: -1px;
+}
+xm-select > .xm-body .xm-cascader-box::before {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-right-color: #E6E6E6;
+  top: 10px;
+  left: -12px;
+}
+xm-select > .xm-body .xm-cascader-box::after {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-right-color: #fff;
+  top: 10px;
+  left: -11px;
+}
+xm-select > .xm-body .xm-cascader-scroll {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+xm-select > .xm-body.cascader {
+  width: unset;
+  min-width: unset;
+}
+xm-select > .xm-body.cascader .xm-option-content {
+  padding-left: 8px;
+}
+xm-select > .xm-body.cascader .disabled .xm-right-arrow {
+  color: #C2C2C2 !important;
+}
+xm-select > .xm-body.cascader .hide-icon.disabled .xm-right-arrow {
+  color: #999 !important;
+}
+xm-select .xm-input {
+  cursor: pointer;
+  border-radius: 2px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #E6E6E6;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #FFF;
+  line-height: 1.3;
+  padding-left: 10px;
+  outline: 0;
+  user-select: text;
+  -ms-user-select: text;
+  -moz-user-select: text;
+  -webkit-user-select: text;
+}
+xm-select .dis {
+  display: none;
+}
+xm-select .loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+xm-select .loader {
+  border: 0.2em dotted currentcolor;
+  border-radius: 50%;
+  -webkit-animation: 1s loader linear infinite;
+  animation: 1s loader linear infinite;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  color: inherit;
+  vertical-align: middle;
+  pointer-events: none;
+}
+xm-select .xm-select-default {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: none;
+  visibility: hidden;
+}
+xm-select .xm-select-disabled {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  cursor: no-drop;
+  z-index: 2;
+  opacity: 0.3;
+  background-color: #FFF;
+}
+xm-select .item--divided {
+  border-top: 1px solid #ebeef5;
+  width: calc(100% - 20px);
+  cursor: initial;
+}
+xm-select .xm-right-arrow {
+  position: absolute;
+  color: ;
+  right: 5px;
+  top: -1px;
+  font-weight: 700;
+  transform: scale(0.6, 1);
+}
+xm-select .xm-right-arrow::after {
+  content: '>';
+}
+xm-select[size='large'] {
+  min-height: 40px;
+  line-height: 40px;
+}
+xm-select[size='large'] .xm-input {
+  height: 40px;
+}
+xm-select[size='large'] .xm-label .scroll .label-content {
+  line-height: 34px;
+}
+xm-select[size='large'] .xm-label .xm-label-block {
+  height: 30px;
+  line-height: 30px;
+}
+xm-select[size='large'] .xm-body .xm-option .xm-option-icon {
+  height: 20px;
+  width: 20px;
+  font-size: 20px;
+}
+xm-select[size='large'] .xm-paging > span {
+  height: 34px;
+  line-height: 34px;
+}
+xm-select[size='large'] .xm-tree .left-line {
+  height: 100%;
+  bottom: 20px;
+}
+xm-select[size='large'] .xm-tree .left-line-group {
+  height: calc(100% - 40px);
+}
+xm-select[size='large'] .xm-tree .xm-tree-icon.xm-hidden + .top-line {
+  top: 19px;
+}
+xm-select[size='large'] .item--divided {
+  margin: 10px;
+}
+xm-select {
+  min-height: 36px;
+  line-height: 36px;
+}
+xm-select .xm-input {
+  height: 36px;
+}
+xm-select .xm-label .scroll .label-content {
+  line-height: 30px;
+}
+xm-select .xm-label .xm-label-block {
+  height: 26px;
+  line-height: 26px;
+}
+xm-select .xm-body .xm-option .xm-option-icon {
+  height: 18px;
+  width: 18px;
+  font-size: 18px;
+}
+xm-select .xm-paging > span {
+  height: 30px;
+  line-height: 30px;
+}
+xm-select .xm-tree .left-line {
+  height: 100%;
+  bottom: 18px;
+}
+xm-select .xm-tree .left-line-group {
+  height: calc(100% - 36px);
+}
+xm-select .xm-tree .xm-tree-icon.xm-hidden + .top-line {
+  top: 17px;
+}
+xm-select .item--divided {
+  margin: 9px;
+}
+xm-select[size='small'] {
+  min-height: 32px;
+  line-height: 32px;
+}
+xm-select[size='small'] .xm-input {
+  height: 32px;
+}
+xm-select[size='small'] .xm-label .scroll .label-content {
+  line-height: 26px;
+}
+xm-select[size='small'] .xm-label .xm-label-block {
+  height: 22px;
+  line-height: 22px;
+}
+xm-select[size='small'] .xm-body .xm-option .xm-option-icon {
+  height: 16px;
+  width: 16px;
+  font-size: 16px;
+}
+xm-select[size='small'] .xm-paging > span {
+  height: 26px;
+  line-height: 26px;
+}
+xm-select[size='small'] .xm-tree .left-line {
+  height: 100%;
+  bottom: 16px;
+}
+xm-select[size='small'] .xm-tree .left-line-group {
+  height: calc(100% - 32px);
+}
+xm-select[size='small'] .xm-tree .xm-tree-icon.xm-hidden + .top-line {
+  top: 15px;
+}
+xm-select[size='small'] .item--divided {
+  margin: 8px;
+}
+xm-select[size='mini'] {
+  min-height: 28px;
+  line-height: 28px;
+}
+xm-select[size='mini'] .xm-input {
+  height: 28px;
+}
+xm-select[size='mini'] .xm-label .scroll .label-content {
+  line-height: 22px;
+}
+xm-select[size='mini'] .xm-label .xm-label-block {
+  height: 18px;
+  line-height: 18px;
+}
+xm-select[size='mini'] .xm-body .xm-option .xm-option-icon {
+  height: 14px;
+  width: 14px;
+  font-size: 14px;
+}
+xm-select[size='mini'] .xm-paging > span {
+  height: 22px;
+  line-height: 22px;
+}
+xm-select[size='mini'] .xm-tree .left-line {
+  height: 100%;
+  bottom: 14px;
+}
+xm-select[size='mini'] .xm-tree .left-line-group {
+  height: calc(100% - 28px);
+}
+xm-select[size='mini'] .xm-tree .xm-tree-icon.xm-hidden + .top-line {
+  top: 13px;
+}
+xm-select[size='mini'] .item--divided {
+  margin: 7px;
+}
+.layui-form-pane xm-select {
+  margin: -1px -1px -1px 0;
+}
+</style></head>
 <body data-lang="bi">
   <!-- [EDIT] Replace the name and navigation labels here. -->
   <header class="site-header">
@@ -389,7 +1129,7 @@
           <button class="lang-option" type="button" data-lang-value="bi" aria-pressed="true" title="中英双语">双</button>
         </div>
         <button class="menu-button" type="button" aria-label="打开导航 / Open navigation" aria-expanded="false">
-          <i data-lucide="menu"></i>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="menu" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
         </button>
       </div>
     </nav>
@@ -403,8 +1143,8 @@
         <h1 id="hero-title"><span class="zh-only">张伟峰</span><span class="hero-en-name en-only" lang="en">Zhang Weifeng</span></h1>
         <p class="hero-copy"><span class="zh-only">从事 Agent 微调、强化学习与大模型训练推理。此前在汕头大学研究医学图像分割，在明源云实习。</span><span class="en-copy en-only" lang="en">I work on agent fine-tuning, reinforcement learning, and LLM training and inference. Previously, I studied medical image segmentation at Shantou University and interned at Ming Yuan Cloud.</span></p>
         <div class="actions">
-          <a class="button button-primary" href="#projects"><span class="zh-only">查看项目</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Projects</span> <i data-lucide="arrow-down-right"></i></a>
-          <a class="button button-secondary" href="https://github.com/Kedaya66" target="_blank" rel="noreferrer">GitHub <i data-lucide="github"></i></a>
+          <a class="button button-primary" href="#projects"><span class="zh-only">查看项目</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Projects</span> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-down-right" class="lucide lucide-arrow-down-right"><path d="m7 7 10 10"></path><path d="M17 7v10H7"></path></svg></a>
+          <a class="button button-secondary" href="https://github.com/Kedaya66" target="_blank" rel="noreferrer">GitHub <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="github" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg></a>
         </div>
       </div>
     </section>
@@ -420,16 +1160,6 @@
             <div class="outcome-meta"><span class="zh-only">论文投稿</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Paper Submission</span></div>
             <h3>W2S+</h3>
             <p><span class="zh-only">半监督医学图像分割研究，AAAI 2025 投稿，第一作者。</span><span class="en-copy en-only" lang="en">Semi-supervised medical image segmentation research; AAAI 2025 submission, first author.</span></p>
-          </article>
-          <article class="outcome">
-            <div class="outcome-meta"><span class="zh-only">论文发表</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Publications</span></div>
-            <h3><span class="zh-only">医学影像分级</span><span class="en-only" lang="en">Medical Imaging Grading</span></h3>
-            <p><span class="zh-only">参与骶髂关节炎自动分级研究，相关成果发表于 Physics in Medicine &amp; Biology（2024）和 CCBR（2022）。</span><span class="en-copy en-only" lang="en">Contributed to automated sacroiliitis grading research, with publications in Physics in Medicine &amp; Biology (2024) and CCBR (2022).</span></p>
-          </article>
-          <article class="outcome">
-            <div class="outcome-meta"><span class="zh-only">会议录用</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Conference Paper</span></div>
-            <h3>Strip-FFT</h3>
-            <p><span class="zh-only">单图像去模糊研究，ICIG 2023 录用，学生第三作者。</span><span class="en-copy en-only" lang="en">Single-image deblurring research; accepted at ICIG 2023, student third author.</span></p>
           </article>
           <article class="outcome">
             <div class="outcome-meta"><span class="zh-only">公开代码</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Public Code</span></div>
@@ -453,7 +1183,7 @@
               <div class="project-meta"><span><span class="zh-only">投机解码训练</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Draft Model Training</span></span><span>2026</span></div>
               <h3>DeepSpec OPD Megatron</h3>
               <p><span class="zh-only">基于 DeepSpec，为 DeepSeek-V4-Flash 草稿模型训练接入 Megatron-Core MoE、专家并行和 FP8，并加入 rollout 缓存与共享内存特征传输。</span><span class="en-copy en-only" lang="en">Built on DeepSpec, adding Megatron-Core MoE, expert parallelism and FP8 for DeepSeek-V4-Flash draft-model training, with rollout caching and shared-memory feature transfer.</span></p>
-              <a class="project-link" href="https://github.com/Kedaya66/deepspec-opd-megatron" target="_blank" rel="noreferrer"><span class="zh-only">查看仓库</span><span class="sep-bi"> / </span><span class="en-only" lang="en">View Repository</span> <i data-lucide="arrow-up-right"></i></a>
+              <a class="project-link" href="https://github.com/Kedaya66/deepspec-opd-megatron" target="_blank" rel="noreferrer"><span class="zh-only">查看仓库</span><span class="sep-bi"> / </span><span class="en-only" lang="en">View Repository</span> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a>
               <div class="project-status">Megatron-Core · MoE · FP8 · OPD</div>
             </div>
           </article>
@@ -462,7 +1192,7 @@
               <div class="project-meta"><span><span class="zh-only">推理评测</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Inference Benchmarks</span></span><span>2026</span></div>
               <h3>Bench Viewer</h3>
               <p><span class="zh-only">大模型推理基准测试工作台，支持服务部署、任务队列、结果对比、图表与报告，以及工作流编排和 AI 辅助分析。</span><span class="en-copy en-only" lang="en">A web interface for LLM inference benchmarks, with service deployment, job queues, result comparisons, charts and reports, workflow orchestration and AI-assisted analysis.</span></p>
-              <a class="project-link" href="https://github.com/Kedaya66/bench-viewer" target="_blank" rel="noreferrer"><span class="zh-only">查看仓库</span><span class="sep-bi"> / </span><span class="en-only" lang="en">View Repository</span> <i data-lucide="arrow-up-right"></i></a>
+              <a class="project-link" href="https://github.com/Kedaya66/bench-viewer" target="_blank" rel="noreferrer"><span class="zh-only">查看仓库</span><span class="sep-bi"> / </span><span class="en-only" lang="en">View Repository</span> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a>
               <div class="project-status">Vue 3 · TypeScript · FastAPI · PostgreSQL</div>
             </div>
           </article>
@@ -471,17 +1201,8 @@
               <div class="project-meta"><span><span class="zh-only">投机解码</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Speculative Decoding</span></span><span>2026</span></div>
               <h3>DeepSpec-OPD</h3>
               <p><span class="zh-only">基于 DeepSeek 的 DeepSpec，增加草稿模型同策略蒸馏、SGLang 在线特征读取和并发 rollout，适配 DeepSeek-V4-Flash。</span><span class="en-copy en-only" lang="en">A fork of DeepSeek's DeepSpec adding draft-model on-policy distillation, SGLang feature streaming and concurrent rollouts, with DeepSeek-V4-Flash support.</span></p>
-              <a class="project-link" href="https://github.com/Kedaya66/deepspec-opd" target="_blank" rel="noreferrer"><span class="zh-only">查看仓库</span><span class="sep-bi"> / </span><span class="en-only" lang="en">View Repository</span> <i data-lucide="arrow-up-right"></i></a>
+              <a class="project-link" href="https://github.com/Kedaya66/deepspec-opd" target="_blank" rel="noreferrer"><span class="zh-only">查看仓库</span><span class="sep-bi"> / </span><span class="en-only" lang="en">View Repository</span> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a>
               <div class="project-status">Python · SGLang · FSDP2</div>
-            </div>
-          </article>
-          <article class="project project-text">
-            <div class="project-body">
-              <div class="project-meta"><span><span class="zh-only">推理部署</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Inference Deployment</span></span><span>2026</span></div>
-              <h3>llm-deploy</h3>
-              <p><span class="zh-only">大模型推理服务部署实践仓库。目前 README 仅有标题，尚未上传部署代码。</span><span class="en-copy en-only" lang="en">A repository for LLM inference deployment. The README currently contains only a title; no deployment code has been uploaded.</span></p>
-              <a class="project-link" href="https://github.com/Kedaya66/llm-deploy" target="_blank" rel="noreferrer"><span class="zh-only">查看仓库</span><span class="sep-bi"> / </span><span class="en-only" lang="en">View Repository</span> <i data-lucide="arrow-up-right"></i></a>
-              <div class="project-status">README · MIT License</div>
             </div>
           </article>
           <article class="project project-text">
@@ -580,12 +1301,65 @@
       </div>
     </section>
 
+    <section class="section section-white" id="participated">
+      <div class="shell">
+        <div class="section-head">
+          <div class="section-label" aria-hidden="true">05</div>
+          <h2 class="section-title"><span class="zh-only">参与项目</span><span class="en-title en-only" lang="en">Projects I've Contributed To</span></h2>
+        </div>
+        <div class="participated">
+          <article class="participated-item">
+            <div class="participated-meta"><span>2024.10 - 2025.01</span><span class="zh-only">明源云</span><span class="en-only" lang="en">Ming Yuan Cloud</span></div>
+            <div class="participated-body">
+              <h3><span class="zh-only">AI 创意工场平台</span><span class="en-only" lang="en">AI Creative Workshop</span></h3>
+              <p><span class="zh-only">开发并上线视频切片、文本标签提取与匹配、图像一致性检测功能。</span><span class="en-copy en-only" lang="en">Developed and deployed video clipping, text-tag extraction and matching, and image consistency checks.</span></p>
+            </div>
+          </article>
+          <article class="participated-item">
+            <div class="participated-meta"><span>2024.10 - 2025.01</span><span class="zh-only">明源云</span><span class="en-only" lang="en">Ming Yuan Cloud</span></div>
+            <div class="participated-body">
+              <h3><span class="zh-only">AI 工牌 · 短文本聚类</span><span class="en-only" lang="en">AI Badge · Short-text Clustering</span></h3>
+              <p><span class="zh-only">完成短文本语义聚类算法的设计、开发与评测。</span><span class="en-copy en-only" lang="en">Designed, implemented and evaluated semantic clustering for short texts.</span></p>
+            </div>
+          </article>
+          <article class="participated-item">
+            <div class="participated-meta"><span>2024.10 - 2025.01</span><span class="zh-only">明源云</span><span class="en-only" lang="en">Ming Yuan Cloud</span></div>
+            <div class="participated-body">
+              <h3><span class="zh-only">大模型与多模态评测</span><span class="en-only" lang="en">LLM &amp; Multimodal Evaluation</span></h3>
+              <p><span class="zh-only">测试开源大语言模型与多模态模型在业务任务中的表现，并开展 MMMU、MMMU-Pro 基准评测。</span><span class="en-copy en-only" lang="en">Tested open LLMs and multimodal models on business tasks and conducted evaluations on MMMU and MMMU-Pro.</span></p>
+            </div>
+          </article>
+          <article class="participated-item">
+            <div class="participated-meta"><span>2025.01 - 2025.05</span><span class="zh-only">汕头大学</span><span class="en-only" lang="en">Shantou University</span></div>
+            <div class="participated-body">
+              <h3><span class="zh-only">强化学习与 Agent 调研</span><span class="en-only" lang="en">RL &amp; Agent Studies</span></h3>
+              <p><span class="zh-only">调研 PPO、DPO、GRPO，复现 tau-bench 的 Agent 构建与评测，并调研 OpenRLHF、veRL、TRL 框架。</span><span class="en-copy en-only" lang="en">Studied PPO, DPO and GRPO, reproduced agent construction and evaluation in tau-bench, and explored OpenRLHF, veRL and TRL.</span></p>
+            </div>
+          </article>
+          <article class="participated-item">
+            <div class="participated-meta"><span>2022.09 - 2024.06</span><span class="zh-only">汕头大学 · 参与</span><span class="en-only" lang="en">Shantou University · Contributor</span></div>
+            <div class="participated-body">
+              <h3><span class="zh-only">医学影像分级</span><span class="en-only" lang="en">Medical Imaging Grading</span></h3>
+              <p><span class="zh-only">参与骶髂关节炎自动分级研究，相关成果发表于 Physics in Medicine &amp; Biology（2024）和 CCBR（2022）。</span><span class="en-copy en-only" lang="en">Contributed to automated sacroiliitis grading research, with publications in Physics in Medicine &amp; Biology (2024) and CCBR (2022).</span></p>
+            </div>
+          </article>
+          <article class="participated-item">
+            <div class="participated-meta"><span>2023</span><span class="zh-only">汕头大学 · 参与</span><span class="en-only" lang="en">Shantou University · Contributor</span></div>
+            <div class="participated-body">
+              <h3>Strip-FFT</h3>
+              <p><span class="zh-only">单图像去模糊研究，ICIG 2023 录用，学生第三作者。</span><span class="en-copy en-only" lang="en">Single-image deblurring research; accepted at ICIG 2023, student third author.</span></p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="contact" id="contact">
       <div class="contact-inner shell">
         <div>
           <h2><span class="zh-only">联系</span><span class="en-title en-only" lang="en">Contact</span></h2>
         </div>
-        <a class="button" href="https://github.com/Kedaya66" target="_blank" rel="noreferrer">GitHub · Kedaya66 <i data-lucide="github"></i></a>
+        <a class="button" href="https://github.com/Kedaya66" target="_blank" rel="noreferrer">GitHub · Kedaya66 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="github" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg></a>
       </div>
     </section>
   </main>
@@ -593,7 +1367,7 @@
   <!-- [EDIT] Footer links. -->
   <footer>
     <div class="footer-inner shell">
-      <span>© <span id="year"></span> <span class="zh-only">张伟峰</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Zhang Weifeng</span></span>
+      <span>© <span id="year">2026</span> <span class="zh-only">张伟峰</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Zhang Weifeng</span></span>
       <div class="footer-links">
         <a href="https://github.com/Kedaya66" target="_blank" rel="noreferrer" aria-label="GitHub">GitHub</a>
       </div>
@@ -641,5 +1415,6 @@
       });
     });
   </script>
-</body>
-</html>
+
+
+</body><div id="codex-agent-overlay-root" data-codex-agent-overlay-root="true"></div></html>
