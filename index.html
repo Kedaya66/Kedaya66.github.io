@@ -215,6 +215,22 @@
     .education-details > span { display: block; }
     body[data-lang="bi"] .education-details .en-only { margin-top: 2px; color: var(--muted); }
 
+    .outcomes {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .outcome {
+      padding: 22px 20px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-top: 4px solid var(--coral);
+    }
+    .outcome-meta { margin-bottom: 12px; color: var(--muted); font-size: 12px; font-weight: 800; text-transform: uppercase; }
+    .outcome h3 { margin-bottom: 8px; font-family: Georgia, "Times New Roman", serif; font-size: 22px; font-weight: 500; line-height: 1.25; }
+    body[data-lang="bi"] .outcome h3 .en-only { display: block; margin-top: 6px; color: var(--muted); font-family: inherit; font-size: 16px; }
+    .outcome p { margin-bottom: 0; color: #525960; font-size: 14px; }
+
     .projects {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -320,6 +336,7 @@
       .section-title { font-size: 28px; }
       .role-row { grid-template-columns: 1fr; gap: 8px; }
       .education-summary { grid-template-columns: 1fr; gap: 12px; }
+      .outcomes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .contact-inner { min-height: 220px; grid-template-columns: 1fr; gap: 24px; align-content: center; }
       .contact h2 { font-size: 28px; }
       .contact .button { justify-self: start; }
@@ -344,6 +361,7 @@
 
     @media (max-width: 600px) {
       .education-entry { grid-template-columns: 1fr; gap: 2px; }
+      .outcomes { grid-template-columns: 1fr; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -359,6 +377,7 @@
       <a class="brand" href="#top" aria-label="张伟峰 / Zhang Weifeng">ZWF<span class="dot">.</span></a>
       <div class="nav-actions">
         <div class="nav-links">
+          <a href="#outcomes"><span class="zh-only">成果</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Outcomes</span></a>
           <a href="#projects"><span class="zh-only">项目</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Projects</span></a>
           <a href="#work"><span class="zh-only">研究</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Research</span></a>
           <a href="#experience"><span class="zh-only">经历</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Experience</span></a>
@@ -391,11 +410,42 @@
       </div>
     </section>
 
+    <section class="section section-white" id="outcomes">
+      <div class="shell">
+        <div class="section-head">
+          <div class="section-label" aria-hidden="true">01</div>
+          <h2 class="section-title"><span class="zh-only">代表成果</span><span class="en-title en-only" lang="en">Selected Outcomes</span></h2>
+        </div>
+        <div class="outcomes">
+          <article class="outcome">
+            <div class="outcome-meta"><span class="zh-only">论文投稿</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Paper Submission</span></div>
+            <h3>W2S+</h3>
+            <p><span class="zh-only">半监督医学图像分割研究，AAAI 2025 投稿，第一作者。</span><span class="en-copy en-only" lang="en">Semi-supervised medical image segmentation research; AAAI 2025 submission, first author.</span></p>
+          </article>
+          <article class="outcome">
+            <div class="outcome-meta"><span class="zh-only">论文发表</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Publications</span></div>
+            <h3><span class="zh-only">医学影像分级</span><span class="en-only" lang="en">Medical Imaging Grading</span></h3>
+            <p><span class="zh-only">参与骶髂关节炎自动分级研究，相关成果发表于 Physics in Medicine &amp; Biology（2024）和 CCBR（2022）。</span><span class="en-copy en-only" lang="en">Contributed to automated sacroiliitis grading research, with publications in Physics in Medicine &amp; Biology (2024) and CCBR (2022).</span></p>
+          </article>
+          <article class="outcome">
+            <div class="outcome-meta"><span class="zh-only">会议录用</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Conference Paper</span></div>
+            <h3>Strip-FFT</h3>
+            <p><span class="zh-only">单图像去模糊研究，ICIG 2023 录用，学生第三作者。</span><span class="en-copy en-only" lang="en">Single-image deblurring research; accepted at ICIG 2023, student third author.</span></p>
+          </article>
+          <article class="outcome">
+            <div class="outcome-meta"><span class="zh-only">公开代码</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Public Code</span></div>
+            <h3><span class="zh-only">训练与评测工具</span><span class="en-only" lang="en">Training &amp; Benchmark Tools</span></h3>
+            <p><span class="zh-only">公开 DeepSpec OPD Megatron 与 Bench Viewer 项目，分别用于草稿模型训练和大模型推理评测。</span><span class="en-copy en-only" lang="en">Published DeepSpec OPD Megatron and Bench Viewer for draft-model training and LLM inference benchmarking.</span></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <!-- Public GitHub repositories. -->
     <section class="section project-section" id="projects">
       <div class="shell">
         <div class="section-head">
-          <div class="section-label" aria-hidden="true">01</div>
+          <div class="section-label" aria-hidden="true">02</div>
           <h2 class="section-title"><span class="zh-only">GitHub 项目</span><span class="en-title en-only" lang="en">GitHub Projects</span></h2>
         </div>
         <div class="projects">
@@ -443,7 +493,7 @@
     <section class="section section-white project-section" id="work">
       <div class="shell">
         <div class="section-head">
-          <div class="section-label" aria-hidden="true">02</div>
+          <div class="section-label" aria-hidden="true">03</div>
           <h2 class="section-title"><span class="zh-only">研究项目</span><span class="en-title en-only" lang="en">Research Projects</span></h2>
         </div>
         <div class="projects">
@@ -486,7 +536,7 @@
     <section class="section section-white" id="experience">
       <div class="shell">
         <div class="section-head">
-          <div class="section-label" aria-hidden="true">03</div>
+          <div class="section-label" aria-hidden="true">04</div>
           <h2 class="section-title"><span class="zh-only">经历</span><span class="en-title en-only" lang="en">Experience</span></h2>
         </div>
         <div class="timeline">
@@ -526,7 +576,7 @@
     <section class="section section-white" id="about">
       <div class="shell">
         <div class="section-head">
-          <div class="section-label" aria-hidden="true">04</div>
+          <div class="section-label" aria-hidden="true">05</div>
           <h2 class="section-title"><span class="zh-only">技术与工具</span><span class="en-title en-only" lang="en">Methods &amp; Tools</span></h2>
         </div>
         <div class="skill-list" aria-label="技术与工具 / Methods and tools">
