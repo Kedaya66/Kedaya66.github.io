@@ -22,7 +22,7 @@
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    section[id] { scroll-margin-top: var(--header-h); }
+    section[id], .project[id] { scroll-margin-top: var(--header-h); }
     body {
       margin: 0;
       color: var(--ink);
@@ -379,7 +379,6 @@
         <div class="nav-links">
           <a href="#outcomes"><span class="zh-only">成果</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Outcomes</span></a>
           <a href="#projects"><span class="zh-only">项目</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Projects</span></a>
-          <a href="#work"><span class="zh-only">研究</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Research</span></a>
           <a href="#experience"><span class="zh-only">经历</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Experience</span></a>
           <a href="#about"><span class="zh-only">技术</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Tools</span></a>
           <a href="#contact"><span class="zh-only">联系</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Contact</span></a>
@@ -441,12 +440,12 @@
       </div>
     </section>
 
-    <!-- Public GitHub repositories. -->
+    <!-- Public repositories and research projects. -->
     <section class="section project-section" id="projects">
       <div class="shell">
         <div class="section-head">
           <div class="section-label" aria-hidden="true">02</div>
-          <h2 class="section-title"><span class="zh-only">GitHub 项目</span><span class="en-title en-only" lang="en">GitHub Projects</span></h2>
+          <h2 class="section-title"><span class="zh-only">项目</span><span class="en-title en-only" lang="en">Projects</span></h2>
         </div>
         <div class="projects">
           <article class="project project-text">
@@ -485,19 +484,8 @@
               <div class="project-status">README · MIT License</div>
             </div>
           </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Research projects from CV; submission and publication statuses are distinct. -->
-    <section class="section section-white project-section" id="work">
-      <div class="shell">
-        <div class="section-head">
-          <div class="section-label" aria-hidden="true">03</div>
-          <h2 class="section-title"><span class="zh-only">研究项目</span><span class="en-title en-only" lang="en">Research Projects</span></h2>
-        </div>
-        <div class="projects">
-          <article class="project project-text">
+          <!-- Preserve the research anchor and distinguish submission from publication. -->
+          <article class="project project-text" id="work">
             <div class="project-body">
               <div class="project-meta"><span><span class="zh-only">半监督医学分割</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Semi-supervised Medical Segmentation</span></span><span>2023 - 2024</span></div>
               <h3>W2S+: Adapting Weak-to-Strong Consistency</h3>
@@ -536,7 +524,7 @@
     <section class="section section-white" id="experience">
       <div class="shell">
         <div class="section-head">
-          <div class="section-label" aria-hidden="true">04</div>
+          <div class="section-label" aria-hidden="true">03</div>
           <h2 class="section-title"><span class="zh-only">经历</span><span class="en-title en-only" lang="en">Experience</span></h2>
         </div>
         <div class="timeline">
@@ -576,7 +564,7 @@
     <section class="section section-white" id="about">
       <div class="shell">
         <div class="section-head">
-          <div class="section-label" aria-hidden="true">05</div>
+          <div class="section-label" aria-hidden="true">04</div>
           <h2 class="section-title"><span class="zh-only">技术与工具</span><span class="en-title en-only" lang="en">Methods &amp; Tools</span></h2>
         </div>
         <div class="skill-list" aria-label="技术与工具 / Methods and tools">
