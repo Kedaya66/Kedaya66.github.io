@@ -195,15 +195,14 @@
     .video-placeholder p { margin: 0; font-size: 14px; font-weight: 700; }
     .participated {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0 48px;
+      grid-template-columns: 1fr;
       border-top: 1px solid var(--line);
     }
     .participated-item {
       display: grid;
-      grid-template-columns: 120px minmax(0, 1fr);
-      gap: 20px;
-      padding: 22px 0 24px;
+      grid-template-columns: 210px minmax(0, 1fr);
+      gap: 36px;
+      padding: 24px 0 26px;
       border-bottom: 1px solid var(--line);
     }
     .participated-meta { color: var(--muted); font-size: 12px; font-weight: 800; line-height: 1.5; text-transform: uppercase; }
@@ -251,23 +250,25 @@
     .projects {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 28px;
+      gap: 0 48px;
+      border-top: 1px solid var(--line);
     }
     .project {
       overflow: hidden;
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 6px;
-      transition: transform 180ms ease, box-shadow 180ms ease;
+      background: transparent;
+      border: 0;
+      border-bottom: 1px solid var(--line);
+      border-radius: 0;
+      transition: background 180ms ease;
     }
-    .project:hover { transform: translateY(-3px); box-shadow: 0 14px 36px rgba(18,20,18,0.08); }
+    .project:hover { background: rgba(223,229,221,0.32); }
     .project-media { aspect-ratio: 16 / 9; overflow: hidden; background: #dfe4e8; }
     .project-media img { width: 100%; height: 100%; object-fit: cover; transition: transform 220ms ease; }
     .project:hover .project-media img { transform: scale(1.025); }
-    .project-body { padding: 24px; }
-    .project-text { display: flex; border-top: 4px solid var(--coral); }
+    .project-body { padding: 28px 20px 30px 0; }
+    .project-text { display: flex; }
     .project-text .project-body { width: 100%; display: flex; flex-direction: column; }
-    .project-status { margin-top: auto; padding-top: 16px; border-top: 1px solid var(--line); color: var(--coral); font-size: 12px; font-weight: 800; text-transform: uppercase; }
+    .project-status { margin-top: auto; padding-top: 14px; border-top: 0; color: var(--coral); font-size: 12px; font-weight: 800; text-transform: uppercase; }
     .project-meta { display: flex; justify-content: space-between; gap: 16px; margin-bottom: 12px; color: var(--muted); font-size: 12px; font-weight: 800; text-transform: uppercase; }
     .project h3 { margin-bottom: 10px; font-family: Georgia, "Times New Roman", serif; font-size: 26px; font-weight: 500; line-height: 1.25; }
     .project p { margin-bottom: 18px; color: #525960; }
@@ -565,50 +566,15 @@
           <article class="participated-item">
             <div class="participated-meta"><span>当前</span><span class="zh-only">九安医疗</span><span class="en-only" lang="en">iHealth</span></div>
             <div class="participated-body">
-              <h3><span class="zh-only">多轮对话 Agent 微调</span><span class="en-only" lang="en">Multi-turn Agent Fine-tuning</span></h3>
-              <p><span class="zh-only">面向多轮对话任务开展 Agent 微调与定制。</span><span class="en-copy en-only" lang="en">Fine-tuned and customized agents for multi-turn dialogue tasks.</span></p>
-            </div>
-          </article>
-          <article class="participated-item">
-            <div class="participated-meta"><span>当前</span><span class="zh-only">九安医疗</span><span class="en-only" lang="en">iHealth</span></div>
-            <div class="participated-body">
-              <h3><span class="zh-only">投机解码训练框架</span><span class="en-only" lang="en">Speculative Decoding Training Framework</span></h3>
-              <p><span class="zh-only">构建草稿模型训练与评测链路，支持策略蒸馏和并行 rollout。</span><span class="en-copy en-only" lang="en">Built draft-model training and evaluation workflows with on-policy distillation and parallel rollouts.</span></p>
-            </div>
-          </article>
-          <article class="participated-item">
-            <div class="participated-meta"><span>当前</span><span class="zh-only">九安医疗</span><span class="en-only" lang="en">iHealth</span></div>
-            <div class="participated-body">
-              <h3><span class="zh-only">模型评测工作台</span><span class="en-only" lang="en">Model Evaluation Workbench</span></h3>
-              <p><span class="zh-only">开发大模型服务部署、基准测试、结果对比与分析工作台。</span><span class="en-copy en-only" lang="en">Developed a workbench for LLM service deployment, benchmarking, result comparison, and analysis.</span></p>
-            </div>
-          </article>
-          <article class="participated-item">
-            <div class="participated-meta"><span>当前</span><span class="zh-only">九安医疗</span><span class="en-only" lang="en">iHealth</span></div>
-            <div class="participated-body">
-              <h3><span class="zh-only">强化学习链路优化</span><span class="en-only" lang="en">Reinforcement Learning Pipeline Optimization</span></h3>
-              <p><span class="zh-only">优化 Agent 强化学习训练链路，提高数据处理、训练与评测效率。</span><span class="en-copy en-only" lang="en">Optimized agent reinforcement-learning workflows for more efficient data processing, training, and evaluation.</span></p>
+              <h3><span class="zh-only">训练与评测系统</span><span class="en-only" lang="en">Training &amp; Evaluation Systems</span></h3>
+              <p><span class="zh-only">覆盖多轮对话 Agent 微调、投机解码训练、强化学习链路优化，以及模型部署、推理加速与评测工作台。</span><span class="en-copy en-only" lang="en">Covered multi-turn agent fine-tuning, speculative-decoding training, reinforcement-learning pipeline optimization, model deployment, inference acceleration, and evaluation tooling.</span></p>
             </div>
           </article>
           <article class="participated-item">
             <div class="participated-meta"><span>2024.10 - 2025.01</span><span class="zh-only">明源云</span><span class="en-only" lang="en">Ming Yuan Cloud</span></div>
             <div class="participated-body">
-              <h3><span class="zh-only">AI 创意工场平台</span><span class="en-only" lang="en">AI Creative Workshop</span></h3>
-              <p><span class="zh-only">开发并上线视频切片、文本标签提取与匹配、图像一致性检测功能。</span><span class="en-copy en-only" lang="en">Developed and deployed video clipping, text-tag extraction and matching, and image consistency checks.</span></p>
-            </div>
-          </article>
-          <article class="participated-item">
-            <div class="participated-meta"><span>2024.10 - 2025.01</span><span class="zh-only">明源云</span><span class="en-only" lang="en">Ming Yuan Cloud</span></div>
-            <div class="participated-body">
-              <h3><span class="zh-only">AI 工牌 · 短文本聚类</span><span class="en-only" lang="en">AI Badge · Short-text Clustering</span></h3>
-              <p><span class="zh-only">完成短文本语义聚类算法的设计、开发与评测。</span><span class="en-copy en-only" lang="en">Designed, implemented and evaluated semantic clustering for short texts.</span></p>
-            </div>
-          </article>
-          <article class="participated-item">
-            <div class="participated-meta"><span>2024.10 - 2025.01</span><span class="zh-only">明源云</span><span class="en-only" lang="en">Ming Yuan Cloud</span></div>
-            <div class="participated-body">
-              <h3><span class="zh-only">大模型与多模态评测</span><span class="en-only" lang="en">LLM &amp; Multimodal Evaluation</span></h3>
-              <p><span class="zh-only">测试开源大语言模型与多模态模型在业务任务中的表现，并开展 MMMU、MMMU-Pro 基准评测。</span><span class="en-copy en-only" lang="en">Tested open LLMs and multimodal models on business tasks and conducted evaluations on MMMU and MMMU-Pro.</span></p>
+              <h3><span class="zh-only">AI 应用与模型评测</span><span class="en-only" lang="en">AI Applications &amp; Model Evaluation</span></h3>
+              <p><span class="zh-only">参与 AI 应用开发、文本标签处理、短文本聚类，以及大语言模型和多模态模型评测。</span><span class="en-copy en-only" lang="en">Worked on AI applications, text-tag processing, short-text clustering, and LLM and multimodal-model evaluation.</span></p>
             </div>
           </article>
           <article class="participated-item">
