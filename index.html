@@ -277,6 +277,18 @@
     .project-link { display: inline-flex; align-items: center; gap: 8px; font-weight: 850; }
     .project-link:hover { color: var(--coral); }
     .project-link svg { width: 18px; height: 18px; }
+    .project-results { margin: 0 0 22px; }
+    .project-results .result-context { margin-bottom: 10px; color: var(--muted); font-size: 12px; }
+    .result-metrics { display: grid; gap: 10px; margin: 0; }
+    .result-metrics > div { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 16px; }
+    .result-metrics dt { color: var(--muted); font-size: 13px; }
+    .result-metrics dd { margin: 0; font-size: 18px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .project-details { margin: 0 0 22px; padding-top: 14px; border-top: 1px solid var(--line); }
+    .project-details summary { color: var(--coral); font-size: 14px; cursor: pointer; }
+    .project-details[open] summary { margin-bottom: 16px; }
+    .project-details p { margin-bottom: 14px; font-size: 14px; }
+    .project-details p:last-child { margin-bottom: 0; }
+
 
     .project-section { padding: 112px 0; }
     .project-section .section-head {
@@ -456,9 +468,9 @@
             <p><span class="zh-only">半监督医学图像分割研究，AAAI 2025 投稿，第一作者。</span><span class="en-copy en-only" lang="en">Semi-supervised medical image segmentation research; AAAI 2025 submission, first author.</span></p>
           </article>
           <article class="outcome">
-            <div class="outcome-meta"><span class="zh-only">公开代码</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Public Code</span></div>
-            <h3><span class="zh-only">训练与评测工具</span><span class="en-only" lang="en">Training &amp; Benchmark Tools</span></h3>
-            <p><span class="zh-only">公开 DeepSpec OPD Megatron 与 Bench Viewer 项目，分别用于草稿模型训练和大模型推理评测。</span><span class="en-copy en-only" lang="en">Published DeepSpec OPD Megatron and Bench Viewer for draft-model training and LLM inference benchmarking.</span></p>
+            <div class="outcome-meta">DeepSpec-v5 · 8×H200</div>
+            <h3><span class="zh-only">投机解码模型训练框架</span><span class="en-only" lang="en">Speculative Decoding Training Framework</span></h3>
+            <p><span class="zh-only">完成 DeepSeek-V4-Flash 的 DSpark 草稿模型微调；通过 rollout 缓存，将单步耗时从 27.3 分钟降至 5.3 分钟。</span><span class="en-copy en-only" lang="en">Fine-tuned the DSpark draft model for DeepSeek-V4-Flash; rollout caching reduced step time from 27.3 to 5.3 minutes.</span></p>
           </article>
         </div>
       </div>
@@ -475,8 +487,22 @@
           <article class="project project-text">
             <div class="project-body">
               <div class="project-meta"><span><span class="zh-only">投机解码训练</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Draft Model Training</span></span><span>2026</span></div>
-              <h3>DeepSpec OPD Megatron</h3>
-              <p><span class="zh-only">基于 DeepSpec，为 DeepSeek-V4-Flash 草稿模型训练接入 Megatron-Core MoE、专家并行和 FP8，并加入 rollout 缓存与共享内存特征传输。</span><span class="en-copy en-only" lang="en">Built on DeepSpec, adding Megatron-Core MoE, expert parallelism and FP8 for DeepSeek-V4-Flash draft-model training, with rollout caching and shared-memory feature transfer.</span></p>
+              <h3>DeepSpec-v5</h3>
+              <p><span class="zh-only">基于 DeepSpec 补全 DeepSeek-V4-Flash 的 DSpark 草稿模型训练支持，从 FSDP2 验证迁移至 Megatron-Core MoE 训练，在 8×H200 上完成微调。</span><span class="en-copy en-only" lang="en">Extended DeepSpec to train the DSpark draft model for DeepSeek-V4-Flash, progressing from FSDP2 validation to Megatron-Core MoE training and completing fine-tuning on 8×H200 GPUs.</span></p>
+              <div class="project-results">
+                <p class="result-context"><span class="zh-only">8×H200 · 训练记录</span><span class="sep-bi"> / </span><span class="en-only" lang="en">8×H200 · Training measurements</span></p>
+                <dl class="result-metrics">
+                  <div><dt><span class="zh-only">训练 Loss</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Training loss</span></dt><dd>3.91 → 2.50</dd></div>
+                  <div><dt><span class="zh-only">训练侧首位置接受率</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Training-side first-position acceptance</span></dt><dd>6.6% → 15.3%</dd></div>
+                  <div><dt><span class="zh-only">Rollout 缓存前后单步耗时</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Step time before / after rollout caching</span></dt><dd>27.3 → 5.3 <span class="zh-only">分钟</span><span class="en-only" lang="en">min</span></dd></div>
+                </dl>
+              </div>
+              <details class="project-details">
+                <summary><span class="zh-only">实现过程</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Implementation</span></summary>
+                <p><span class="zh-only">模型适配：针对原版主要支持 Qwen3、Gemma 等目标模型的情况，研究 DSpark/OPD、目标模型特征导出与训练框架，补充 DeepSeek-V4-Flash 支持；以 FSDP2 验证数据处理、target rollout、特征蒸馏与 checkpoint 流程。</span><span class="en-copy en-only" lang="en">Model support: starting from upstream support for targets such as Qwen3 and Gemma, studied DSpark/OPD, target-model feature export and training frameworks, then added DeepSeek-V4-Flash support. Validated data processing, target rollouts, feature distillation and checkpointing with FSDP2.</span></p>
+                <p><span class="zh-only">MoE 训练：针对显存、专家计算与通信瓶颈，将模型和训练器迁移至 Megatron-Core，引入专家并行、Grouped GEMM、分布式优化器及 BF16/FP8 混合精度；通过权重转换与并行一致性测试，完成预训练 DSpark 权重加载和多卡专家切分。</span><span class="en-copy en-only" lang="en">MoE training: migrated the model and trainer to Megatron-Core to address memory, expert-compute and communication bottlenecks, adding expert parallelism, Grouped GEMM, a distributed optimizer and BF16/FP8 mixed precision. Weight conversion and parallel-consistency tests enabled pretrained DSpark weight loading and expert sharding across GPUs.</span></p>
+                <p><span class="zh-only">链路优化：加入两阶段 rollout 缓存、异步特征预取、统一 FeatureClient、/dev/shm 共享内存传输、服务自愈与训练启动门控，形成 DeepSpec-v5。</span><span class="en-copy en-only" lang="en">Pipeline optimization: added two-stage rollout caching, asynchronous feature prefetching, a unified FeatureClient, /dev/shm shared-memory transfer, automatic service recovery and training-start readiness checks to form DeepSpec-v5.</span></p>
+              </details>
               <a class="project-link" href="https://github.com/Kedaya66/deepspec-opd-megatron" target="_blank" rel="noreferrer"><span class="zh-only">查看仓库</span><span class="sep-bi"> / </span><span class="en-only" lang="en">View Repository</span> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a>
               <div class="project-status">Megatron-Core · MoE · FP8 · OPD</div>
             </div>
