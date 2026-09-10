@@ -219,13 +219,23 @@
       padding: 30px 0;
       border-bottom: 1px solid var(--line);
     }
-    .role-head { display: grid; grid-template-columns: 170px 220px minmax(0, 1fr) 190px; gap: 36px; padding-bottom: 8px; border-bottom: 1px solid var(--line); }
-    .role-head .rh-label { grid-column: 4; color: var(--muted); font-size: 11px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; }
+    .role-head { display: grid; grid-template-columns: 170px 220px minmax(0, 1fr) 190px; gap: 36px; padding-bottom: 2px; }
+    .role-head .rh-label { grid-column: 4; color: var(--muted); font-size: 11px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.75; }
     .role-projects { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
     .role-projects .rp-label { display: none; color: var(--muted); font-size: 11px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; }
     .role-projects a { color: var(--coral); font-size: 14px; font-weight: 750; border-bottom: 1px solid transparent; line-height: 1.3; }
     .role-projects a:hover { border-bottom-color: currentColor; }
     .projects .project { scroll-margin-top: calc(var(--header-h) + 16px); }
+    .pub-list { display: grid; gap: 0; max-width: 780px; }
+    .pub-entry { display: grid; grid-template-columns: 84px minmax(0, 1fr); gap: 24px; padding: 15px 0; border-bottom: 1px solid var(--line); }
+    .pub-entry:first-child { padding-top: 0; }
+    .pub-entry:last-child { border-bottom: none; padding-bottom: 0; }
+    .pub-year { color: var(--muted); font-size: 13px; font-weight: 800; padding-top: 1px; }
+    .pub-title { margin: 0 0 3px; font-size: 16px; font-weight: 650; line-height: 1.4; }
+    .pub-venue { margin: 0; color: #41484f; font-size: 14px; line-height: 1.5; }
+    .pub-venue em { font-style: italic; }
+    .pub-role { display: inline-block; margin-top: 5px; color: var(--coral); font-size: 12px; font-weight: 800; letter-spacing: 0.02em; }
+    .pub-todo { color: var(--muted); font-style: italic; font-weight: 400; }
     .role-time { color: var(--muted); font-size: 14px; font-weight: 800; }
     .role-place strong { display: block; font-size: 19px; }
     .role-place span { color: var(--coral); font-weight: 750; }
@@ -379,6 +389,7 @@
       .role-head { display: none; }
       .role-projects .rp-label { display: block; }
       .education-summary { grid-template-columns: 1fr; gap: 12px; }
+      .pub-entry { grid-template-columns: 1fr; gap: 6px; }
       .outcomes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .contact-inner { min-height: 220px; grid-template-columns: 1fr; gap: 24px; align-content: center; }
       .contact h2 { font-size: 28px; }
@@ -425,6 +436,7 @@
           <a href="#outcomes"><span class="zh-only">成果</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Outcomes</span></a>
           <a href="#experience"><span class="zh-only">经历</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Experience</span></a>
           <a href="#projects"><span class="zh-only">项目</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Projects</span></a>
+          <a href="#publications"><span class="zh-only">论文</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Publications</span></a>
           <a href="#video"><span class="zh-only">视频</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Video</span></a>
           <a href="#contact"><span class="zh-only">联系</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Contact</span></a>
         </div>
@@ -632,6 +644,49 @@
       </div>
     </section>
 
+
+    <section class="section section-white" id="publications">
+      <div class="shell">
+        <div class="section-head">
+          <div class="section-label" aria-hidden="true">05</div>
+          <h2 class="section-title"><span class="zh-only">论文</span><span class="en-title en-only" lang="en">Publications</span></h2>
+        </div>
+        <div class="pub-list">
+          <article class="pub-entry">
+            <div class="pub-year">2025</div>
+            <div class="pub-body">
+              <h3 class="pub-title">W2S+: Adapting Weak-to-Strong Consistency <span class="pub-todo"><span class="zh-only">（待补全完整标题）</span><span class="en-only" lang="en">(full title TBD)</span></span></h3>
+              <p class="pub-venue"><span class="pub-todo"><span class="zh-only">作者顺序待补</span><span class="en-only" lang="en">Authors TBD</span></span> · <em>AAAI 2025</em> <span class="zh-only">（投稿）</span><span class="en-only" lang="en">(submission)</span></p>
+              <span class="pub-role"><span class="zh-only">第一作者 · 半监督医学图像分割</span><span class="en-only" lang="en">First Author · Semi-supervised Medical Image Segmentation</span></span>
+            </div>
+          </article>
+          <article class="pub-entry">
+            <div class="pub-year">2024</div>
+            <div class="pub-body">
+              <h3 class="pub-title"><span class="pub-todo"><span class="zh-only">骶髂关节炎自动分级（待补全标题）</span><span class="en-only" lang="en">Automated sacroiliitis grading (title TBD)</span></span></h3>
+              <p class="pub-venue"><span class="pub-todo"><span class="zh-only">作者顺序待补</span><span class="en-only" lang="en">Authors TBD</span></span> · <em>Physics in Medicine &amp; Biology</em>, 2024</p>
+              <span class="pub-role"><span class="zh-only">参与 · 医学影像分级</span><span class="en-only" lang="en">Contributor · Medical Imaging Grading</span></span>
+            </div>
+          </article>
+          <article class="pub-entry">
+            <div class="pub-year">2023</div>
+            <div class="pub-body">
+              <h3 class="pub-title">Strip-FFT <span class="pub-todo"><span class="zh-only">（待补全完整标题）</span><span class="en-only" lang="en">(full title TBD)</span></span></h3>
+              <p class="pub-venue"><span class="pub-todo"><span class="zh-only">作者顺序待补</span><span class="en-only" lang="en">Authors TBD</span></span> · <em>ICIG 2023</em></p>
+              <span class="pub-role"><span class="zh-only">学生第三作者 · 单图像去模糊</span><span class="en-only" lang="en">Third Author (student) · Single-image Deblurring</span></span>
+            </div>
+          </article>
+          <article class="pub-entry">
+            <div class="pub-year">2022</div>
+            <div class="pub-body">
+              <h3 class="pub-title"><span class="pub-todo"><span class="zh-only">骶髂关节炎自动分级（待补全标题）</span><span class="en-only" lang="en">Automated sacroiliitis grading (title TBD)</span></span></h3>
+              <p class="pub-venue"><span class="pub-todo"><span class="zh-only">作者顺序待补</span><span class="en-only" lang="en">Authors TBD</span></span> · <em>CCBR</em>, 2022</p>
+              <span class="pub-role"><span class="zh-only">参与 · 医学影像分级</span><span class="en-only" lang="en">Contributor · Medical Imaging Grading</span></span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
     <section class="contact" id="contact">
       <div class="contact-inner shell">
