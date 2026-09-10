@@ -223,6 +223,8 @@
     .role-place strong { display: block; font-size: 19px; }
     .role-place span { color: var(--coral); font-weight: 750; }
     .role-copy { margin-bottom: 0; color: #41484f; }
+    .role-copy > p { margin: 0 0 12px; }
+    .role-copy > p:last-child { margin-bottom: 0; }
     .education-summary { display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 36px; padding-bottom: 24px; scroll-margin-top: var(--header-h); }
     .education-label { margin: 0; color: var(--muted); font-size: 14px; font-weight: 650; }
     .education-list { display: grid; gap: 10px; }
@@ -582,7 +584,11 @@
           <article class="role-row">
             <div class="role-time"><span class="zh-only">当前</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Present</span></div>
             <div class="role-place"><strong><span class="zh-only">九安医疗 · 人工智能室</span><span class="sep-bi"> · </span><span class="en-only" lang="en">iHealth · AI Lab</span></strong><span><span class="zh-only">强化学习、Agent 与推理系统</span><span class="sep-bi"> · </span><span class="en-only" lang="en">Reinforcement Learning, Agents &amp; Inference Systems</span></span></div>
-            <p class="role-copy"><span class="zh-only">负责大模型系统相关工作，涵盖模型后训练、推理效率优化、模型评测与部署，以及训练和评测基础设施建设。近期基于 DSpark 投机解码方法，面向 DeepSeek-V4-Flash 设计并实现 DeepSpec-v5 草稿模型训练框架，支持业务场景 Agent 数据微调，并完成训练链路和 rollout 流程优化；在 8×H200 环境下，训练 Loss 从 3.91 降至 2.50，训练侧首位置接受率从 6.6% 提升至 15.3%，通过 rollout 缓存将单步耗时从 27.3 分钟降至 5.3 分钟。此前负责模型推理效率优化，自主建设 Bench Viewer 平台，将服务部署、Benchmark 执行、任务管理、结果分析与故障诊断统一到一个工作流中；同时负责内部 Agent 微调和强化学习训练链路的建设与优化。</span><span class="en-copy en-only" lang="en">Responsible for LLM systems, including post-training, inference-efficiency optimization, model evaluation and deployment, and training and evaluation infrastructure. Recently designed and built the DeepSpec-v5 draft-model training framework for DeepSeek-V4-Flash based on the DSpark speculative-decoding method, supporting fine-tuning on domain Agent data and optimizing the training and rollout pipelines. On 8×H200 GPUs, training loss decreased from 3.91 to 2.50, first-position acceptance increased from 6.6% to 15.3%, and rollout caching reduced step time from 27.3 to 5.3 minutes. Previously focused on inference efficiency and independently built Bench Viewer to unify service deployment, benchmark execution, task management, result analysis, and failure diagnosis; also built and optimized internal Agent fine-tuning and reinforcement-learning training pipelines.</span></p>
+            <div class="role-copy">
+              <p><span class="zh-only">负责大模型系统相关工作，涵盖模型后训练、推理效率优化、模型评测与部署，以及训练和评测基础设施建设。</span><span class="en-copy en-only" lang="en">Responsible for LLM systems, spanning post-training, inference-efficiency optimization, model evaluation and deployment, and training/evaluation infrastructure.</span></p>
+              <p><span class="zh-only">近期基于 DSpark 投机解码方法，面向 DeepSeek-V4-Flash 设计并实现 DeepSpec-v5 草稿模型训练框架，支持业务场景 Agent 数据微调，并完成训练链路和 rollout 流程优化；在 8×H200 环境下，训练 Loss 3.91 → 2.50，训练侧首位置接受率 6.6% → 15.3%，单步耗时经 rollout 缓存由 27.3 分钟降至 5.3 分钟。</span><span class="en-copy en-only" lang="en">Recently designed and built the DeepSpec-v5 draft-model training framework for DeepSeek-V4-Flash based on the DSpark speculative-decoding method, supporting fine-tuning on domain Agent data and optimizing the training and rollout pipelines; on 8×H200 GPUs, training loss 3.91 → 2.50, first-position acceptance 6.6% → 15.3%, and step time 27.3 → 5.3 min with rollout caching.</span></p>
+              <p><span class="zh-only">此前负责模型推理效率优化，自主建设 Bench Viewer 平台，将服务部署、Benchmark 执行、任务管理、结果分析与故障诊断统一到一个工作流；同时负责内部 Agent 微调和强化学习训练链路的建设与优化。</span><span class="en-copy en-only" lang="en">Previously focused on inference-efficiency optimization and independently built the Bench Viewer platform, unifying service deployment, benchmark execution, task management, result analysis, and failure diagnosis into one workflow; also built and optimized internal Agent fine-tuning and reinforcement-learning training pipelines.</span></p>
+            </div>
           </article>
           <article class="role-row">
             <div class="role-time">2024.10 - 2025.01</div>
