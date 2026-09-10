@@ -214,11 +214,16 @@
     .timeline { border-top: 1px solid var(--line); }
     .role-row {
       display: grid;
-      grid-template-columns: 210px 260px 1fr;
+      grid-template-columns: 170px 220px minmax(0, 1fr) 190px;
       gap: 36px;
       padding: 30px 0;
       border-bottom: 1px solid var(--line);
     }
+    .role-projects { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
+    .role-projects .rp-label { color: var(--muted); font-size: 11px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; }
+    .role-projects a { color: var(--coral); font-size: 14px; font-weight: 750; border-bottom: 1px solid transparent; line-height: 1.3; }
+    .role-projects a:hover { border-bottom-color: currentColor; }
+    .projects .project { scroll-margin-top: calc(var(--header-h) + 16px); }
     .role-time { color: var(--muted); font-size: 14px; font-weight: 800; }
     .role-place strong { display: block; font-size: 19px; }
     .role-place span { color: var(--coral); font-weight: 750; }
@@ -414,9 +419,9 @@
       <div class="nav-actions">
         <div class="nav-links">
           <a href="#outcomes"><span class="zh-only">成果</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Outcomes</span></a>
+          <a href="#experience"><span class="zh-only">经历</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Experience</span></a>
           <a href="#projects"><span class="zh-only">项目</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Projects</span></a>
           <a href="#video"><span class="zh-only">视频</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Video</span></a>
-          <a href="#experience"><span class="zh-only">经历</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Experience</span></a>
           <a href="#contact"><span class="zh-only">联系</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Contact</span></a>
         </div>
         <div class="lang-switch" role="group" aria-label="语言显示 / Language display">
@@ -437,7 +442,7 @@
       <div class="hero-inner shell">
         <p class="eyebrow"><span class="zh-only">九安医疗 · 人工智能室</span><span class="sep-bi"> / </span><span class="en-only" lang="en">iHealth · AI Lab</span></p>
         <h1 id="hero-title"><span class="zh-only">张伟峰</span><span class="hero-en-name en-only" lang="en">Zhang Weifeng</span></h1>
-        <p class="hero-copy"><span class="zh-only">目前专注于优化垂直场景中草稿模型的解码效率，研究投机解码草稿模型训练，以及 Agent 微调、强化学习与大模型训练。此前在汕头大学研究医学图像分割；实习期间参与 AI 应用开发、多模态模型评测与文本匹配相关工作。</span><span class="en-copy en-only" lang="en">I focus on improving draft-model decoding efficiency in domain-specific applications, with work on speculative-decoding draft-model training, agent fine-tuning, reinforcement learning, and LLM training. Previously, I studied medical image segmentation at Shantou University and worked on AI application development, multimodal model evaluation, and text matching during my internship.</span></p>
+        <p class="hero-copy"><span class="zh-only">在大模型系统方向做研究与工程，专注让模型在真实业务里跑得更快、更省。当前聚焦垂直场景下草稿模型的解码效率，围绕投机解码草稿模型训练、Agent 微调、强化学习与大模型训练，搭建配套的训练与评测基础设施。此前在汕头大学研究医学图像分割，实习期间参与 AI 应用开发、多模态模型评测与文本匹配。</span><span class="en-copy en-only" lang="en">I work at the intersection of research and engineering on large-model systems, focused on making models run faster and more efficiently in production. My current work centers on draft-model decoding efficiency for domain-specific scenarios — spanning speculative-decoding draft-model training, agent fine-tuning, reinforcement learning, and LLM training, along with the training and evaluation infrastructure that supports them. Earlier I researched medical image segmentation at Shantou University and worked on AI application development, multimodal model evaluation, and text matching during my internship.</span></p>
         <div class="actions">
           <a class="button button-primary" href="#projects"><span class="zh-only">查看项目</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Projects</span> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-down-right" class="lucide lucide-arrow-down-right"><path d="m7 7 10 10"></path><path d="M17 7v10H7"></path></svg></a>
           <a class="button button-secondary" href="https://github.com/Kedaya66" target="_blank" rel="noreferrer">GitHub <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="github" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg></a>
@@ -479,92 +484,10 @@
     </section>
 
     <!-- Public repositories and research projects. -->
-    <section class="section project-section" id="projects">
-      <div class="shell">
-        <div class="section-head">
-          <div class="section-label" aria-hidden="true">03</div>
-          <h2 class="section-title"><span class="zh-only">项目</span><span class="en-title en-only" lang="en">Projects</span></h2>
-        </div>
-        <div class="projects">
-          <article class="project project-text">
-            <div class="project-body">
-              <div class="project-meta"><span><span class="zh-only">投机解码训练</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Draft Model Training</span></span><span>2026</span></div>
-              <h3>DeepSpec-v5</h3>
-              <p><span class="zh-only">基于 DeepSpec 补全 DeepSeek-V4-Flash 的 DSpark 草稿模型训练支持，从 FSDP2 验证迁移至 Megatron-Core MoE 训练，在 8×H200 上完成微调。</span><span class="en-copy en-only" lang="en">Extended DeepSpec to train the DSpark draft model for DeepSeek-V4-Flash, progressing from FSDP2 validation to Megatron-Core MoE training and completing fine-tuning on 8×H200 GPUs.</span></p>
-              <div class="project-results">
-                <p class="result-context"><span class="zh-only">8×H200 · 训练记录</span><span class="sep-bi"> / </span><span class="en-only" lang="en">8×H200 · Training measurements</span></p>
-                <dl class="result-metrics">
-                  <div><dt><span class="zh-only">训练 Loss</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Training loss</span></dt><dd>3.91 → 2.50</dd></div>
-                  <div><dt><span class="zh-only">训练侧首位置接受率</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Training-side first-position acceptance</span></dt><dd>6.6% → 15.3%</dd></div>
-                  <div><dt><span class="zh-only">Rollout 缓存前后单步耗时</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Step time before / after rollout caching</span></dt><dd>27.3 → 5.3 <span class="zh-only">分钟</span><span class="en-only" lang="en">min</span></dd></div>
-                </dl>
-              </div>
-              <details class="project-details">
-                <summary><span class="zh-only">实现过程</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Implementation</span></summary>
-                <p><span class="zh-only">迭代一：针对原版主要支持 Qwen3、Gemma 等目标模型的情况，研究 DSpark/OPD、目标模型特征导出与训练框架，补充 DeepSeek-V4-Flash 支持；以 FSDP2 打通数据处理、target rollout、特征蒸馏与 checkpoint 流程。</span><span class="en-copy en-only" lang="en">Model support: starting from upstream support for targets such as Qwen3 and Gemma, studied DSpark/OPD, target-model feature export and training frameworks, then added DeepSeek-V4-Flash support. Validated data processing, target rollouts, feature distillation and checkpointing with FSDP2.</span></p>
-                <p><span class="zh-only">迭代二：针对 MoE 模型的显存、专家计算与通信瓶颈，将模型和训练器迁移至 Megatron-Core，引入专家并行、Grouped GEMM、分布式优化器及 BF16/FP8 混合精度；通过权重转换与并行一致性测试，完成预训练草稿模型权重加载和多卡专家切分。</span><span class="en-copy en-only" lang="en">MoE training: migrated the model and trainer to Megatron-Core to address memory, expert-compute and communication bottlenecks, adding expert parallelism, Grouped GEMM, a distributed optimizer and BF16/FP8 mixed precision. Weight conversion and parallel-consistency tests enabled pretrained DSpark weight loading and expert sharding across GPUs.</span></p>
-                <p><span class="zh-only">迭代三：加入两阶段 rollout 缓存、异步特征预取、统一 FeatureClient、/dev/shm 共享内存传输、服务自愈与训练启动门控，形成 DeepSpec-v5。</span><span class="en-copy en-only" lang="en">Pipeline optimization: added two-stage rollout caching, asynchronous feature prefetching, a unified FeatureClient, /dev/shm shared-memory transfer, automatic service recovery and training-start readiness checks to form DeepSpec-v5.</span></p>
-              </details>
-              <a class="project-link" href="https://github.com/Kedaya66/deepspec-opd-megatron" target="_blank" rel="noreferrer"><span class="zh-only">查看仓库</span><span class="sep-bi"> / </span><span class="en-only" lang="en">View Repository</span> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a>
-              <div class="project-status">Megatron-Core · MoE · FP8 · OPD</div>
-            </div>
-          </article>
-          <article class="project project-text">
-            <div class="project-body">
-              <div class="project-meta"><span><span class="zh-only">推理评测</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Inference Benchmarks</span></span><span>2026</span></div>
-              <h3>Bench Viewer</h3>
-              <p><span class="zh-only">已完成 Bench Viewer v20.1，统一模型推理服务部署、Benchmark 执行、任务队列、结果管理与性能分析。支持多模型、多并发、多配置的批量自动化测试，将零散实验整理为可重复验证、可对比分析、可协同追踪的评测工作流。</span><span class="en-copy en-only" lang="en">Built Bench Viewer v20.1 to unify inference-service deployment, benchmark execution, job queues, result management, and performance analysis. Batch testing across models, concurrency levels, and configurations turns individual experiments into repeatable evaluation workflows with comparable results and shared progress tracking.</span></p>
-              <details class="project-details">
-                <summary><span class="zh-only">平台能力与产出</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Capabilities &amp; Deliverables</span></summary>
-                <p><span class="zh-only">自动化编排：建立统一 Tool 工具层和 Workflow 工作流引擎，支持顺序、并行、条件、循环、等待与审批，减少部署和批量评测中的人工操作。</span><span class="en-copy en-only" lang="en">Automation: a unified Tool layer and Workflow engine support sequential, parallel, conditional, loop, wait, and approval steps, reducing manual work in deployment and batch evaluation.</span></p>
-                <p><span class="zh-only">协作与追踪：通过 WebSocket/SSE 和 EventBus 展示任务状态、工作流进度与系统事件，支持多人协作和过程追踪。</span><span class="en-copy en-only" lang="en">Collaboration and tracking: WebSocket/SSE and EventBus expose task status, workflow progress, and system events for shared monitoring and traceability.</span></p>
-                <p><span class="zh-only">分析与诊断：支持吞吐、TTFT、TPOT、P99 延迟等指标对比、图表展示和 HTML 报告生成；集成 AI 助手、知识检索、失败诊断与通知，辅助执行评测并定位显存不足、端口冲突、模型加载失败等问题。</span><span class="en-copy en-only" lang="en">Analysis and diagnosis: compare throughput, TTFT, TPOT, and P99 latency through charts and HTML reports. An AI assistant, knowledge retrieval, failure diagnosis, and notifications help run evaluations and investigate out-of-memory errors, port conflicts, and model-loading failures.</span></p>
-                <p><span class="zh-only">架构迁移：保留旧版 API 和运行路径，支持新旧架构渐进式迁移。</span><span class="en-copy en-only" lang="en">Architecture migration: legacy APIs and runtime paths remain available for a gradual transition to the new architecture.</span></p>
-                <p><span class="zh-only">数据产出：沉淀模型性能指标、实验配置、运行数据与日志、故障模式、对比报告、评测工作流和知识，为模型选型、推理优化与部署调优提供数据基础。</span><span class="en-copy en-only" lang="en">Deliverables: retained model-performance metrics, experiment configurations, runtime data and logs, failure patterns, comparison reports, evaluation workflows, and knowledge to inform model selection, inference optimization, and deployment tuning.</span></p>
-              </details>
-              <a class="project-link" href="https://github.com/Kedaya66/bench-viewer" target="_blank" rel="noreferrer"><span class="zh-only">查看仓库</span><span class="sep-bi"> / </span><span class="en-only" lang="en">View Repository</span> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a>
-              <div class="project-status">Vue 3 · TypeScript · FastAPI · PostgreSQL</div>
-            </div>
-          </article>
-          <article class="project project-text">
-            <div class="project-body">
-              <div class="project-meta"><span><span class="zh-only">投机解码</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Speculative Decoding</span></span><span>2026</span></div>
-              <h3>DeepSpec-OPD</h3>
-              <p><span class="zh-only">基于 DeepSeek 的 DeepSpec，增加草稿模型同策略蒸馏、SGLang 在线特征读取和并发 rollout，适配 DeepSeek-V4-Flash。</span><span class="en-copy en-only" lang="en">A fork of DeepSeek's DeepSpec adding draft-model on-policy distillation, SGLang feature streaming and concurrent rollouts, with DeepSeek-V4-Flash support.</span></p>
-              <a class="project-link" href="https://github.com/Kedaya66/deepspec-opd" target="_blank" rel="noreferrer"><span class="zh-only">查看仓库</span><span class="sep-bi"> / </span><span class="en-only" lang="en">View Repository</span> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a>
-              <div class="project-status">Python · SGLang · FSDP2</div>
-            </div>
-          </article>
-          <article class="project project-text">
-            <div class="project-body">
-              <div class="project-meta"><span><span class="zh-only">半监督医学分割</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Semi-supervised Medical Segmentation</span></span><span>2023 - 2024</span></div>
-              <h3>W2S+: Adapting Weak-to-Strong Consistency</h3>
-              <p><span class="zh-only">研究代表性子集选择与双阶段强弱一致性，用于半监督医学图像分割。</span><span class="en-copy en-only" lang="en">Studied representative-subset selection and two-stage weak-to-strong consistency for semi-supervised medical image segmentation.</span></p>
-              <div class="project-status"><span class="zh-only">AAAI 2025 投稿 · 第一作者</span><span class="sep-bi"> / </span><span class="en-only" lang="en">AAAI 2025 Submission · First Author</span></div>
-            </div>
-          </article>
-          <article class="project project-text">
-            <div class="project-body">
-              <div class="project-meta"><span><span class="zh-only">大语言模型</span><span class="sep-bi"> / </span><span class="en-only" lang="en">LLM</span></span><span>2025</span></div>
-              <h3><span class="zh-only">中国传统音乐乐谱生成</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Chinese Traditional Music Score Generation</span></h3>
-              <p><span class="zh-only">将乐谱图片和 PDF 转为 MusicXML，准备指令微调数据并搭建训练、评测流程。</span><span class="en-copy en-only" lang="en">Converted score images and PDFs to MusicXML, prepared instruction-tuning data, and built training and evaluation workflows.</span></p>
-              <div class="project-status">OMR · MusicXML · SFT</div>
-            </div>
-          </article>
-
-          <article class="project project-text"><div class="project-body"><div class="project-meta"><span><span class="zh-only">参与 · 训练与评测</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Contribution · Training &amp; Evaluation</span></span><span><span class="zh-only">当前</span><span class="en-only" lang="en">Present</span></span></div><h3><span class="zh-only">Agent 与推理系统</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Agents &amp; Inference Systems</span></h3><p><span class="zh-only">参与多轮对话 Agent 微调、投机解码训练、强化学习链路优化，以及模型部署、推理加速与评测工作台建设。</span><span class="en-copy en-only" lang="en">Contributed to multi-turn agent fine-tuning, speculative-decoding training, reinforcement-learning pipeline optimization, model deployment, inference acceleration, and evaluation tooling.</span></p><div class="project-status">iHealth · Agent · RL · Inference</div></div></article>
-          <article class="project project-text"><div class="project-body"><div class="project-meta"><span><span class="zh-only">参与 · AI 应用</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Contribution · AI Applications</span></span><span>2024.10 - 2025.01</span></div><h3><span class="zh-only">多模态模型评测与文本匹配</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Multimodal Evaluation &amp; Text Matching</span></h3><p><span class="zh-only">在明源云参与 AI 应用开发、多模态模型评测与文本匹配相关工作。</span><span class="en-copy en-only" lang="en">Worked on AI application development, multimodal model evaluation, and text matching at Ming Yuan Cloud.</span></p><div class="project-status">Ming Yuan Cloud · Multimodal · NLP</div></div></article>
-<article class="project project-text"><div class="project-body"><div class="project-meta"><span>2025.01 - 2025.05</span><span class="zh-only">汕头大学</span><span class="en-only" lang="en">Shantou University</span></div><h3><span class="zh-only">强化学习与 Agent 调研</span><span class="en-only" lang="en">RL &amp; Agent Studies</span></h3><p><span class="zh-only">调研 PPO、DPO、GRPO，复现 tau-bench 的 Agent 构建与评测，并调研 OpenRLHF、veRL、TRL 框架。</span><span class="en-copy en-only" lang="en">Studied PPO, DPO and GRPO, reproduced agent construction and evaluation in tau-bench, and explored OpenRLHF, veRL and TRL.</span></p></div></article>
-<article class="project project-text"><div class="project-body"><div class="project-meta"><span>2022.09 - 2024.06</span><span class="zh-only">论文发表 · 参与</span><span class="en-only" lang="en">Publications · Contributor</span></div><h3><span class="zh-only">医学影像分级</span><span class="en-only" lang="en">Medical Imaging Grading</span></h3><p><span class="zh-only">参与骶髂关节炎自动分级研究，相关成果发表于 Physics in Medicine &amp; Biology（2024）和 CCBR（2022）。</span><span class="en-copy en-only" lang="en">Contributed to automated sacroiliitis grading research, with publications in Physics in Medicine &amp; Biology (2024) and CCBR (2022).</span></p></div></article>
-<article class="project project-text"><div class="project-body"><div class="project-meta"><span>2023</span><span class="zh-only">会议录用 · 参与</span><span class="en-only" lang="en">Conference Paper · Contributor</span></div><h3>Strip-FFT</h3><p><span class="zh-only">单图像去模糊研究，ICIG 2023 录用，学生第三作者。</span><span class="en-copy en-only" lang="en">Single-image deblurring research; accepted at ICIG 2023, student third author.</span></p></div></article>
-        </div>
-      </div>
-    </section>
-
     <section class="section section-white" id="experience">
       <div class="shell">
         <div class="section-head">
-          <div class="section-label" aria-hidden="true">04</div>
+          <div class="section-label" aria-hidden="true">03</div>
           <h2 class="section-title"><span class="zh-only">经历</span><span class="en-title en-only" lang="en">Experience</span></h2>
         </div>
         <div class="education-summary" id="education">
@@ -589,20 +512,119 @@
               <p><span class="zh-only">近期基于 DSpark 投机解码方法，面向 DeepSeek-V4-Flash 设计并实现 DeepSpec-v5 草稿模型训练框架，支持业务场景 Agent 数据微调，并完成训练链路和 rollout 流程优化；在 8×H200 环境下，训练 Loss 3.91 → 2.50，训练侧首位置接受率 6.6% → 15.3%，单步耗时经 rollout 缓存由 27.3 分钟降至 5.3 分钟。</span><span class="en-copy en-only" lang="en">Recently designed and built the DeepSpec-v5 draft-model training framework for DeepSeek-V4-Flash based on the DSpark speculative-decoding method, supporting fine-tuning on domain Agent data and optimizing the training and rollout pipelines; on 8×H200 GPUs, training loss 3.91 → 2.50, first-position acceptance 6.6% → 15.3%, and step time 27.3 → 5.3 min with rollout caching.</span></p>
               <p><span class="zh-only">此前负责模型推理效率优化，自主建设 Bench Viewer 平台，将服务部署、Benchmark 执行、任务管理、结果分析与故障诊断统一到一个工作流；同时负责内部 Agent 微调和强化学习训练链路的建设与优化。</span><span class="en-copy en-only" lang="en">Previously focused on inference-efficiency optimization and independently built the Bench Viewer platform, unifying service deployment, benchmark execution, task management, result analysis, and failure diagnosis into one workflow; also built and optimized internal Agent fine-tuning and reinforcement-learning training pipelines.</span></p>
             </div>
+            <div class="role-projects">
+              <span class="rp-label"><span class="zh-only">相关项目</span><span class="en-only" lang="en">Projects</span></span>
+              <a href="#proj-deepspec-v5">DeepSpec-v5</a>
+              <a href="#proj-bench-viewer">Bench Viewer</a>
+              <a href="#proj-deepspec-opd">DeepSpec-OPD</a>
+            </div>
           </article>
           <article class="role-row">
             <div class="role-time">2024.10 - 2025.01</div>
             <div class="role-place"><strong><span class="zh-only">明源云 · 人工智能事业部</span><span class="sep-bi"> · </span><span class="en-only" lang="en">Ming Yuan Cloud · AI Division</span></strong><span><span class="zh-only">算法实习生</span><span class="sep-bi"> · </span><span class="en-only" lang="en">Algorithm Intern</span></span></div>
             <p class="role-copy"><span class="zh-only">参与 AI 应用开发、多模态模型评测与文本匹配相关工作。</span><span class="en-copy en-only" lang="en">Worked on AI application development, multimodal model evaluation, and text matching.</span></p>
+            <div class="role-projects">
+              <span class="rp-label"><span class="zh-only">相关项目</span><span class="en-only" lang="en">Projects</span></span>
+              <a href="#proj-multimodal"><span class="zh-only">多模态评测与文本匹配</span><span class="en-only" lang="en">Multimodal Eval &amp; Matching</span></a>
+            </div>
           </article>
           <article class="role-row">
             <div class="role-time">2022.09 - 2025.06</div>
             <div class="role-place"><strong><span class="zh-only">汕头大学工学院</span><span class="sep-bi"> · </span><span class="en-only" lang="en">College of Engineering, Shantou University</span></strong><span><span class="zh-only">计算机视觉与医学影像研究</span><span class="sep-bi"> · </span><span class="en-only" lang="en">Computer Vision &amp; Medical Imaging</span></span></div>
             <p class="role-copy"><span class="zh-only">研究半监督医学图像分割，并参与医学影像分级与图像去模糊研究。</span><span class="en-copy en-only" lang="en">Researched semi-supervised medical image segmentation and contributed to medical image grading and image deblurring studies.</span></p>
+            <div class="role-projects">
+              <span class="rp-label"><span class="zh-only">相关项目</span><span class="en-only" lang="en">Projects</span></span>
+              <a href="#proj-w2s">W2S+</a>
+              <a href="#proj-grading"><span class="zh-only">医学影像分级</span><span class="en-only" lang="en">Imaging Grading</span></a>
+              <a href="#proj-stripfft">Strip-FFT</a>
+            </div>
           </article>
         </div>
       </div>
     </section>
+
+    <section class="section project-section" id="projects">
+      <div class="shell">
+        <div class="section-head">
+          <div class="section-label" aria-hidden="true">04</div>
+          <h2 class="section-title"><span class="zh-only">项目</span><span class="en-title en-only" lang="en">Projects</span></h2>
+        </div>
+        <div class="projects">
+          <article class="project project-text" id="proj-deepspec-v5">
+            <div class="project-body">
+              <div class="project-meta"><span><span class="zh-only">投机解码训练</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Draft Model Training</span></span><span>2026</span></div>
+              <h3>DeepSpec-v5</h3>
+              <p><span class="zh-only">基于 DeepSpec 补全 DeepSeek-V4-Flash 的 DSpark 草稿模型训练支持，从 FSDP2 验证迁移至 Megatron-Core MoE 训练，在 8×H200 上完成微调。</span><span class="en-copy en-only" lang="en">Extended DeepSpec to train the DSpark draft model for DeepSeek-V4-Flash, progressing from FSDP2 validation to Megatron-Core MoE training and completing fine-tuning on 8×H200 GPUs.</span></p>
+              <div class="project-results">
+                <p class="result-context"><span class="zh-only">8×H200 · 训练记录</span><span class="sep-bi"> / </span><span class="en-only" lang="en">8×H200 · Training measurements</span></p>
+                <dl class="result-metrics">
+                  <div><dt><span class="zh-only">训练 Loss</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Training loss</span></dt><dd>3.91 → 2.50</dd></div>
+                  <div><dt><span class="zh-only">训练侧首位置接受率</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Training-side first-position acceptance</span></dt><dd>6.6% → 15.3%</dd></div>
+                  <div><dt><span class="zh-only">Rollout 缓存前后单步耗时</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Step time before / after rollout caching</span></dt><dd>27.3 → 5.3 <span class="zh-only">分钟</span><span class="en-only" lang="en">min</span></dd></div>
+                </dl>
+              </div>
+              <details class="project-details">
+                <summary><span class="zh-only">实现过程</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Implementation</span></summary>
+                <p><span class="zh-only">迭代一：针对原版主要支持 Qwen3、Gemma 等目标模型的情况，研究 DSpark/OPD、目标模型特征导出与训练框架，补充 DeepSeek-V4-Flash 支持；以 FSDP2 打通数据处理、target rollout、特征蒸馏与 checkpoint 流程。</span><span class="en-copy en-only" lang="en">Model support: starting from upstream support for targets such as Qwen3 and Gemma, studied DSpark/OPD, target-model feature export and training frameworks, then added DeepSeek-V4-Flash support. Validated data processing, target rollouts, feature distillation and checkpointing with FSDP2.</span></p>
+                <p><span class="zh-only">迭代二：针对 MoE 模型的显存、专家计算与通信瓶颈，将模型和训练器迁移至 Megatron-Core，引入专家并行、Grouped GEMM、分布式优化器及 BF16/FP8 混合精度；通过权重转换与并行一致性测试，完成预训练草稿模型权重加载和多卡专家切分。</span><span class="en-copy en-only" lang="en">MoE training: migrated the model and trainer to Megatron-Core to address memory, expert-compute and communication bottlenecks, adding expert parallelism, Grouped GEMM, a distributed optimizer and BF16/FP8 mixed precision. Weight conversion and parallel-consistency tests enabled pretrained DSpark weight loading and expert sharding across GPUs.</span></p>
+                <p><span class="zh-only">迭代三：加入两阶段 rollout 缓存、异步特征预取、统一 FeatureClient、/dev/shm 共享内存传输、服务自愈与训练启动门控，形成 DeepSpec-v5。</span><span class="en-copy en-only" lang="en">Pipeline optimization: added two-stage rollout caching, asynchronous feature prefetching, a unified FeatureClient, /dev/shm shared-memory transfer, automatic service recovery and training-start readiness checks to form DeepSpec-v5.</span></p>
+              </details>
+              <a class="project-link" href="https://github.com/Kedaya66/deepspec-opd-megatron" target="_blank" rel="noreferrer"><span class="zh-only">查看仓库</span><span class="sep-bi"> / </span><span class="en-only" lang="en">View Repository</span> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a>
+              <div class="project-status">Megatron-Core · MoE · FP8 · OPD</div>
+            </div>
+          </article>
+          <article class="project project-text" id="proj-bench-viewer">
+            <div class="project-body">
+              <div class="project-meta"><span><span class="zh-only">推理评测</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Inference Benchmarks</span></span><span>2026</span></div>
+              <h3>Bench Viewer</h3>
+              <p><span class="zh-only">已完成 Bench Viewer v20.1，统一模型推理服务部署、Benchmark 执行、任务队列、结果管理与性能分析。支持多模型、多并发、多配置的批量自动化测试，将零散实验整理为可重复验证、可对比分析、可协同追踪的评测工作流。</span><span class="en-copy en-only" lang="en">Built Bench Viewer v20.1 to unify inference-service deployment, benchmark execution, job queues, result management, and performance analysis. Batch testing across models, concurrency levels, and configurations turns individual experiments into repeatable evaluation workflows with comparable results and shared progress tracking.</span></p>
+              <details class="project-details">
+                <summary><span class="zh-only">平台能力与产出</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Capabilities &amp; Deliverables</span></summary>
+                <p><span class="zh-only">自动化编排：建立统一 Tool 工具层和 Workflow 工作流引擎，支持顺序、并行、条件、循环、等待与审批，减少部署和批量评测中的人工操作。</span><span class="en-copy en-only" lang="en">Automation: a unified Tool layer and Workflow engine support sequential, parallel, conditional, loop, wait, and approval steps, reducing manual work in deployment and batch evaluation.</span></p>
+                <p><span class="zh-only">协作与追踪：通过 WebSocket/SSE 和 EventBus 展示任务状态、工作流进度与系统事件，支持多人协作和过程追踪。</span><span class="en-copy en-only" lang="en">Collaboration and tracking: WebSocket/SSE and EventBus expose task status, workflow progress, and system events for shared monitoring and traceability.</span></p>
+                <p><span class="zh-only">分析与诊断：支持吞吐、TTFT、TPOT、P99 延迟等指标对比、图表展示和 HTML 报告生成；集成 AI 助手、知识检索、失败诊断与通知，辅助执行评测并定位显存不足、端口冲突、模型加载失败等问题。</span><span class="en-copy en-only" lang="en">Analysis and diagnosis: compare throughput, TTFT, TPOT, and P99 latency through charts and HTML reports. An AI assistant, knowledge retrieval, failure diagnosis, and notifications help run evaluations and investigate out-of-memory errors, port conflicts, and model-loading failures.</span></p>
+                <p><span class="zh-only">架构迁移：保留旧版 API 和运行路径，支持新旧架构渐进式迁移。</span><span class="en-copy en-only" lang="en">Architecture migration: legacy APIs and runtime paths remain available for a gradual transition to the new architecture.</span></p>
+                <p><span class="zh-only">数据产出：沉淀模型性能指标、实验配置、运行数据与日志、故障模式、对比报告、评测工作流和知识，为模型选型、推理优化与部署调优提供数据基础。</span><span class="en-copy en-only" lang="en">Deliverables: retained model-performance metrics, experiment configurations, runtime data and logs, failure patterns, comparison reports, evaluation workflows, and knowledge to inform model selection, inference optimization, and deployment tuning.</span></p>
+              </details>
+              <a class="project-link" href="https://github.com/Kedaya66/bench-viewer" target="_blank" rel="noreferrer"><span class="zh-only">查看仓库</span><span class="sep-bi"> / </span><span class="en-only" lang="en">View Repository</span> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a>
+              <div class="project-status">Vue 3 · TypeScript · FastAPI · PostgreSQL</div>
+            </div>
+          </article>
+          <article class="project project-text" id="proj-deepspec-opd">
+            <div class="project-body">
+              <div class="project-meta"><span><span class="zh-only">投机解码</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Speculative Decoding</span></span><span>2026</span></div>
+              <h3>DeepSpec-OPD</h3>
+              <p><span class="zh-only">基于 DeepSeek 的 DeepSpec，增加草稿模型同策略蒸馏、SGLang 在线特征读取和并发 rollout，适配 DeepSeek-V4-Flash。</span><span class="en-copy en-only" lang="en">A fork of DeepSeek's DeepSpec adding draft-model on-policy distillation, SGLang feature streaming and concurrent rollouts, with DeepSeek-V4-Flash support.</span></p>
+              <a class="project-link" href="https://github.com/Kedaya66/deepspec-opd" target="_blank" rel="noreferrer"><span class="zh-only">查看仓库</span><span class="sep-bi"> / </span><span class="en-only" lang="en">View Repository</span> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a>
+              <div class="project-status">Python · SGLang · FSDP2</div>
+            </div>
+          </article>
+          <article class="project project-text" id="proj-w2s">
+            <div class="project-body">
+              <div class="project-meta"><span><span class="zh-only">半监督医学分割</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Semi-supervised Medical Segmentation</span></span><span>2023 - 2024</span></div>
+              <h3>W2S+: Adapting Weak-to-Strong Consistency</h3>
+              <p><span class="zh-only">研究代表性子集选择与双阶段强弱一致性，用于半监督医学图像分割。</span><span class="en-copy en-only" lang="en">Studied representative-subset selection and two-stage weak-to-strong consistency for semi-supervised medical image segmentation.</span></p>
+              <div class="project-status"><span class="zh-only">AAAI 2025 投稿 · 第一作者</span><span class="sep-bi"> / </span><span class="en-only" lang="en">AAAI 2025 Submission · First Author</span></div>
+            </div>
+          </article>
+          <article class="project project-text">
+            <div class="project-body">
+              <div class="project-meta"><span><span class="zh-only">大语言模型</span><span class="sep-bi"> / </span><span class="en-only" lang="en">LLM</span></span><span>2025</span></div>
+              <h3><span class="zh-only">中国传统音乐乐谱生成</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Chinese Traditional Music Score Generation</span></h3>
+              <p><span class="zh-only">将乐谱图片和 PDF 转为 MusicXML，准备指令微调数据并搭建训练、评测流程。</span><span class="en-copy en-only" lang="en">Converted score images and PDFs to MusicXML, prepared instruction-tuning data, and built training and evaluation workflows.</span></p>
+              <div class="project-status">OMR · MusicXML · SFT</div>
+            </div>
+          </article>
+
+          <article class="project project-text"><div class="project-body"><div class="project-meta"><span><span class="zh-only">参与 · 训练与评测</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Contribution · Training &amp; Evaluation</span></span><span><span class="zh-only">当前</span><span class="en-only" lang="en">Present</span></span></div><h3><span class="zh-only">Agent 与推理系统</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Agents &amp; Inference Systems</span></h3><p><span class="zh-only">参与多轮对话 Agent 微调、投机解码训练、强化学习链路优化，以及模型部署、推理加速与评测工作台建设。</span><span class="en-copy en-only" lang="en">Contributed to multi-turn agent fine-tuning, speculative-decoding training, reinforcement-learning pipeline optimization, model deployment, inference acceleration, and evaluation tooling.</span></p><div class="project-status">iHealth · Agent · RL · Inference</div></div></article>
+          <article class="project project-text" id="proj-multimodal"><div class="project-body"><div class="project-meta"><span><span class="zh-only">参与 · AI 应用</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Contribution · AI Applications</span></span><span>2024.10 - 2025.01</span></div><h3><span class="zh-only">多模态模型评测与文本匹配</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Multimodal Evaluation &amp; Text Matching</span></h3><p><span class="zh-only">在明源云参与 AI 应用开发、多模态模型评测与文本匹配相关工作。</span><span class="en-copy en-only" lang="en">Worked on AI application development, multimodal model evaluation, and text matching at Ming Yuan Cloud.</span></p><div class="project-status">Ming Yuan Cloud · Multimodal · NLP</div></div></article>
+<article class="project project-text"><div class="project-body"><div class="project-meta"><span>2025.01 - 2025.05</span><span class="zh-only">汕头大学</span><span class="en-only" lang="en">Shantou University</span></div><h3><span class="zh-only">强化学习与 Agent 调研</span><span class="en-only" lang="en">RL &amp; Agent Studies</span></h3><p><span class="zh-only">调研 PPO、DPO、GRPO，复现 tau-bench 的 Agent 构建与评测，并调研 OpenRLHF、veRL、TRL 框架。</span><span class="en-copy en-only" lang="en">Studied PPO, DPO and GRPO, reproduced agent construction and evaluation in tau-bench, and explored OpenRLHF, veRL and TRL.</span></p></div></article>
+<article class="project project-text" id="proj-grading"><div class="project-body"><div class="project-meta"><span>2022.09 - 2024.06</span><span class="zh-only">论文发表 · 参与</span><span class="en-only" lang="en">Publications · Contributor</span></div><h3><span class="zh-only">医学影像分级</span><span class="en-only" lang="en">Medical Imaging Grading</span></h3><p><span class="zh-only">参与骶髂关节炎自动分级研究，相关成果发表于 Physics in Medicine &amp; Biology（2024）和 CCBR（2022）。</span><span class="en-copy en-only" lang="en">Contributed to automated sacroiliitis grading research, with publications in Physics in Medicine &amp; Biology (2024) and CCBR (2022).</span></p></div></article>
+<article class="project project-text" id="proj-stripfft"><div class="project-body"><div class="project-meta"><span>2023</span><span class="zh-only">会议录用 · 参与</span><span class="en-only" lang="en">Conference Paper · Contributor</span></div><h3>Strip-FFT</h3><p><span class="zh-only">单图像去模糊研究，ICIG 2023 录用，学生第三作者。</span><span class="en-copy en-only" lang="en">Single-image deblurring research; accepted at ICIG 2023, student third author.</span></p></div></article>
+        </div>
+      </div>
+    </section>
+
 
     <section class="contact" id="contact">
       <div class="contact-inner shell">
