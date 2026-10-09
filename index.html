@@ -184,15 +184,21 @@
       text-transform: uppercase;
     }
     .section-title { margin-bottom: 0; font-family: Georgia, "Times New Roman", serif; font-size: 32px; font-weight: 500; line-height: 1.3; }
-    .video-placeholder {
+    .video-frame {
       aspect-ratio: 16 / 9;
       display: grid;
       place-items: center;
-      color: var(--muted);
       background: #eef1ee;
       border: 1px solid var(--line);
     }
-    .video-placeholder p { margin: 0; font-size: 14px; font-weight: 700; }
+    .video-frame video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      object-fit: contain;
+    }
+    .video-frame p { margin: 0; padding: 0 24px; color: var(--muted); font-size: 14px; font-weight: 700; text-align: center; }
     .participated {
       display: grid;
       grid-template-columns: 1fr;
@@ -476,8 +482,11 @@
           <div class="section-label" aria-hidden="true">01</div>
           <h2 class="section-title"><span class="zh-only">视频介绍</span><span class="en-title en-only" lang="en">Video Introduction</span></h2>
         </div>
-        <div class="video-placeholder" aria-label="视频介绍占位区域 / Video introduction placeholder">
-          <p><span class="zh-only">视频介绍将在这里呈现</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Video introduction will appear here</span></p>
+        <div class="video-frame">
+          <video controls preload="metadata" playsinline width="1920" height="1080" poster="media/pixel_quest_v2-poster.jpg" aria-label="视频介绍 / Video introduction">
+            <source src="media/pixel_quest_v2.mp4" type="video/mp4">
+            <p><span class="zh-only">你的浏览器无法播放内嵌视频，可<a href="media/pixel_quest_v2.mp4">下载观看</a>。</span><span class="sep-bi"> / </span><span class="en-only" lang="en">Your browser cannot play embedded video. <a href="media/pixel_quest_v2.mp4">Download it instead</a>.</span></p>
+          </video>
         </div>
       </div>
     </section>
